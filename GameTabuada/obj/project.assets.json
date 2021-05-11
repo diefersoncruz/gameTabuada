@@ -5961,11 +5961,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gametabuadarepository\\GameTabuada\\GameTabuada\\GameTabuada.csproj",
+      "projectUniqueName": "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
       "projectName": "GameTabuada",
-      "projectPath": "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gametabuadarepository\\GameTabuada\\GameTabuada\\GameTabuada.csproj",
+      "projectPath": "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
       "packagesPath": "C:\\Users\\diefe\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gametabuadarepository\\GameTabuada\\GameTabuada\\obj\\",
+      "outputPath": "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gameTabuada\\GameTabuada\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\diefe\\AppData\\Roaming\\NuGet\\NuGet.Config",
