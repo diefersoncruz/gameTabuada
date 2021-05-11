@@ -1,0 +1,25 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2012/06/nuspec.xsd">
+  <metadata>
+    <id>GameTabuada</id>
+    <version>1.0.0</version>
+    <authors>GameTabuada</authors>
+    <requireLicenseAcceptance>false</requireLicenseAcceptance>
+    <description>Package Description</description>
+    <dependencies>
+      <group targetFramework=".NETCoreApp3.1">
+        <dependency id="Microsoft.CognitiveServices.Speech" version="1.13.0" exclude="Build,Analyzers" />
+        <dependency id="Nancy" version="2.0.0" exclude="Build,Analyzers" />
+      </group>
+    </dependencies>
+    <frameworkReferences>
+      <group targetFramework=".NETCoreApp3.1">
+        <frameworkReference name="Microsoft.WindowsDesktop.App.WindowsForms" />
+      </group>
+    </frameworkReferences>
+  </metadata>
+  <files>
+    <file src="C:\Users\diefe\OneDrive\DesenvolvimentoAplicacoes\gametabuadarepository\GameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\GameTabuada.runtimeconfig.json" target="lib\netcoreapp3.1\GameTabuada.runtimeconfig.json" />
+    <file src="C:\Users\diefe\OneDrive\DesenvolvimentoAplicacoes\gametabuadarepository\GameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\GameTabuada.dll" target="lib\netcoreapp3.1\GameTabuada.dll" />
+  </files>
+</package>

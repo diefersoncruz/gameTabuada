@@ -1,0 +1,2 @@
+C:\Users\diefe\OneDrive\DesenvolvimentoAplicacoes\gametabuadarepository\GameTabuada\GameTabuada\bin\Release\GameMatematica\GameTabuada.pdb
+C:\Users\diefe\OneDrive\DesenvolvimentoAplicacoes\gametabuadarepository\GameTabuada\GameTabuada\bin\Release\GameMatematica\GameTabuada.exe
