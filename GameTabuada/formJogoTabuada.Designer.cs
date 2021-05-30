@@ -79,11 +79,17 @@ namespace GameTabuada
             this.timerDuracao = new System.Windows.Forms.Timer(this.components);
             this.btnParar = new System.Windows.Forms.Button();
             this.txtTempo = new System.Windows.Forms.TextBox();
-            this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
             this.panel3 = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
+            this.pJogadores = new System.Windows.Forms.Panel();
+            this.lblSala = new System.Windows.Forms.Label();
+            this.lblRodada = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.lblNomeJogador = new System.Windows.Forms.Label();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.pJogadores.SuspendLayout();
             this.SuspendLayout();
             // 
             // txtFator
@@ -93,11 +99,11 @@ namespace GameTabuada
             this.txtFator.CausesValidation = false;
             this.txtFator.Font = new System.Drawing.Font("Cooper Black", 72F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtFator.ForeColor = System.Drawing.Color.Blue;
-            this.txtFator.Location = new System.Drawing.Point(388, 136);
+            this.txtFator.Location = new System.Drawing.Point(379, 136);
             this.txtFator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFator.Name = "txtFator";
             this.txtFator.ReadOnly = true;
-            this.txtFator.Size = new System.Drawing.Size(219, 118);
+            this.txtFator.Size = new System.Drawing.Size(228, 118);
             this.txtFator.TabIndex = 100;
             this.txtFator.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
@@ -273,16 +279,6 @@ namespace GameTabuada
             this.txtTempo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtTempo.TextChanged += new System.EventHandler(this.txtTempo_TextChanged);
             // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel1.BackgroundImage")));
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(15, 337);
-            this.panel1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(219, 161);
-            this.panel1.TabIndex = 103;
-            // 
             // panel2
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
@@ -308,7 +304,7 @@ namespace GameTabuada
             // 
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(899, 380);
+            this.panel4.Location = new System.Drawing.Point(899, 359);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(125, 100);
@@ -319,11 +315,79 @@ namespace GameTabuada
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(338, 485);
+            this.label5.Location = new System.Drawing.Point(375, 485);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(406, 14);
+            this.label5.Size = new System.Drawing.Size(491, 42);
             this.label5.TabIndex = 107;
-            this.label5.Text = "por Dieferson da Silva Cruz  / E-mail: dieferson.cruz@outlook.com";
+            this.label5.Text = "Desenvolvido por Dieferson da Silva Cruz  / E-mail: dieferson.cruz@outlook.com\r\n\r" +
+    "\nÍcones retirados do site https://icons8.com.br";
+            // 
+            // pJogadores
+            // 
+            this.pJogadores.Controls.Add(this.label1);
+            this.pJogadores.Location = new System.Drawing.Point(15, 296);
+            this.pJogadores.Name = "pJogadores";
+            this.pJogadores.Size = new System.Drawing.Size(350, 230);
+            this.pJogadores.TabIndex = 108;
+            // 
+            // lblSala
+            // 
+            this.lblSala.BackColor = System.Drawing.Color.SkyBlue;
+            this.lblSala.Font = new System.Drawing.Font("Cooper Black", 25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblSala.ForeColor = System.Drawing.Color.DarkRed;
+            this.lblSala.Location = new System.Drawing.Point(17, 300);
+            this.lblSala.Name = "lblSala";
+            this.lblSala.Size = new System.Drawing.Size(340, 40);
+            this.lblSala.TabIndex = 109;
+            this.lblSala.Text = "5 Ano";
+            this.lblSala.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // lblRodada
+            // 
+            this.lblRodada.BackColor = System.Drawing.Color.SkyBlue;
+            this.lblRodada.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.lblRodada.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblRodada.ForeColor = System.Drawing.Color.Black;
+            this.lblRodada.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.lblRodada.Location = new System.Drawing.Point(16, 350);
+            this.lblRodada.Name = "lblRodada";
+            this.lblRodada.Size = new System.Drawing.Size(340, 30);
+            this.lblRodada.TabIndex = 110;
+            this.lblRodada.Text = "Rodada 1 de 2";
+            this.lblRodada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // label1
+            // 
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(10, 100);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 80);
+            this.label1.TabIndex = 0;
+            // 
+            // lblNomeJogador
+            // 
+            this.lblNomeJogador.BackColor = System.Drawing.Color.SkyBlue;
+            this.lblNomeJogador.Font = new System.Drawing.Font("Cooper Black", 30F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.lblNomeJogador.ForeColor = System.Drawing.Color.DarkOrange;
+            this.lblNomeJogador.Location = new System.Drawing.Point(100, 390);
+            this.lblNomeJogador.Name = "lblNomeJogador";
+            this.lblNomeJogador.Size = new System.Drawing.Size(250, 70);
+            this.lblNomeJogador.TabIndex = 111;
+            this.lblNomeJogador.Text = "Dieferson";
+            this.lblNomeJogador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.White;
+            this.btnUsuarios.Font = new System.Drawing.Font("Cooper Black", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnUsuarios.ForeColor = System.Drawing.Color.Black;
+            this.btnUsuarios.Location = new System.Drawing.Point(35, 490);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(300, 30);
+            this.btnUsuarios.TabIndex = 112;
+            this.btnUsuarios.Text = "Configurar sala (F7)";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
             // 
             // formJogoTabuada
             // 
@@ -331,11 +395,15 @@ namespace GameTabuada
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
             this.ClientSize = new System.Drawing.Size(1086, 541);
+            this.Controls.Add(this.btnUsuarios);
+            this.Controls.Add(this.lblNomeJogador);
+            this.Controls.Add(this.lblRodada);
+            this.Controls.Add(this.lblSala);
+            this.Controls.Add(this.pJogadores);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.panel4);
             this.Controls.Add(this.panel3);
             this.Controls.Add(this.panel2);
-            this.Controls.Add(this.panel1);
             this.Controls.Add(this.txtTempo);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.txtQtdAcertos);
@@ -356,6 +424,7 @@ namespace GameTabuada
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Tabuada";
             this.KeyUp += new System.Windows.Forms.KeyEventHandler(this.formJogoTabuada_KeyUp);
+            this.pJogadores.ResumeLayout(false);
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -379,11 +448,16 @@ namespace GameTabuada
         private Timer timerDuracao;
         private Button btnParar;
         private TextBox txtTempo;
-        private Panel panel1;
         private Panel panel2;
         private Panel panel3;
         private Panel panel4;
         private Label label5;
+        private Panel pJogadores;
+        private Label lblSala;
+        private Label lblRodada;
+        private Label label1;
+        private Label lblNomeJogador;
+        private Button btnUsuarios;
     }
 }
 

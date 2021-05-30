@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gameTabuada\\GameTabuada\\GameTabuada.csproj": {}
+    "C:\\workspace\\c#\\gameTabuada\\GameTabuada\\GameTabuada.csproj": {}
   },
   "projects": {
-    "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gameTabuada\\GameTabuada\\GameTabuada.csproj": {
+    "C:\\workspace\\c#\\gameTabuada\\GameTabuada\\GameTabuada.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
+        "projectUniqueName": "C:\\workspace\\c#\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
         "projectName": "GameTabuada",
-        "projectPath": "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
+        "projectPath": "C:\\workspace\\c#\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
         "packagesPath": "C:\\Users\\diefe\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gameTabuada\\GameTabuada\\obj\\publish\\win-x86\\",
+        "outputPath": "C:\\workspace\\c#\\gameTabuada\\GameTabuada\\obj\\publish\\win-x86\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\diefe\\AppData\\Roaming\\NuGet\\NuGet.Config",

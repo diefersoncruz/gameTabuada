@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "wc2HSho4TAXfj3VGauZUR6emmX9A/lfDXCX0A9bvEO+DUIh5bMuOaQP93kjSULJghJ7XedFgaI+uJ47Bv2FUpw==",
+  "dgSpecHash": "0reHp8ILMPUKBOTiA+TfRynaMxKUOdHc4DGG1jMoas+KHN9fN1F50B6sDyYsfKco2zQxHoSZTOPF/bGvbqj45w==",
   "success": true,
-  "projectFilePath": "C:\\Users\\diefe\\OneDrive\\DesenvolvimentoAplicacoes\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
+  "projectFilePath": "C:\\workspace\\c#\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\diefe\\.nuget\\packages\\microsoft.cognitiveservices.speech\\1.13.0\\microsoft.cognitiveservices.speech.1.13.0.nupkg.sha512",
     "C:\\Users\\diefe\\.nuget\\packages\\microsoft.csharp\\4.0.1\\microsoft.csharp.4.0.1.nupkg.sha512",
