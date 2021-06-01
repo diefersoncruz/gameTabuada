@@ -315,6 +315,10 @@ namespace GameTabuada
             {
                 AbrirTelaConfiguracoes();
             }
+            else if (e.KeyCode == Keys.F7)
+            {
+                AbrirTelaConfiguracoesJogadores();
+            }
         }
 
         private void btnIniciarJogo_Click(object sender, EventArgs e)
@@ -340,6 +344,17 @@ namespace GameTabuada
                 PararJogo();
             }
         }
+
+        public void AbrirTelaConfiguracoesJogadores()
+        {
+            if (confirmarAberturaTelaConfiguracao())
+            {
+                PararJogo();
+                FormConfiguracaoSala frmConfiguracao = new FormConfiguracaoSala(this);
+                frmConfiguracao.ShowDialog();
+            }
+        }
+
 
         public void AbrirTelaConfiguracoes()
         {
@@ -379,6 +394,11 @@ namespace GameTabuada
         private void txtTempo_TextChanged(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirTelaConfiguracoesJogadores();
         }
     }
 }

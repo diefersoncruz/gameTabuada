@@ -84,11 +84,11 @@ namespace GameTabuada
             this.panel4 = new System.Windows.Forms.Panel();
             this.label5 = new System.Windows.Forms.Label();
             this.pJogadores = new System.Windows.Forms.Panel();
+            this.btnUsuarios = new System.Windows.Forms.Button();
+            this.label1 = new System.Windows.Forms.Label();
             this.lblSala = new System.Windows.Forms.Label();
             this.lblRodada = new System.Windows.Forms.Label();
-            this.label1 = new System.Windows.Forms.Label();
             this.lblNomeJogador = new System.Windows.Forms.Label();
-            this.btnUsuarios = new System.Windows.Forms.Button();
             this.pJogadores.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -99,7 +99,7 @@ namespace GameTabuada
             this.txtFator.CausesValidation = false;
             this.txtFator.Font = new System.Drawing.Font("Cooper Black", 72F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtFator.ForeColor = System.Drawing.Color.Blue;
-            this.txtFator.Location = new System.Drawing.Point(379, 136);
+            this.txtFator.Location = new System.Drawing.Point(351, 136);
             this.txtFator.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFator.Name = "txtFator";
             this.txtFator.ReadOnly = true;
@@ -112,7 +112,7 @@ namespace GameTabuada
             this.lblOperacaoMatematica.AutoSize = true;
             this.lblOperacaoMatematica.Font = new System.Drawing.Font("Cooper Black", 72F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblOperacaoMatematica.ForeColor = System.Drawing.Color.Blue;
-            this.lblOperacaoMatematica.Location = new System.Drawing.Point(612, 139);
+            this.lblOperacaoMatematica.Location = new System.Drawing.Point(585, 138);
             this.lblOperacaoMatematica.Name = "lblOperacaoMatematica";
             this.lblOperacaoMatematica.Size = new System.Drawing.Size(123, 110);
             this.lblOperacaoMatematica.TabIndex = 1;
@@ -125,7 +125,7 @@ namespace GameTabuada
             this.txtResultado.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtResultado.Font = new System.Drawing.Font("Cooper Black", 72F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtResultado.ForeColor = System.Drawing.Color.Blue;
-            this.txtResultado.Location = new System.Drawing.Point(486, 266);
+            this.txtResultado.Location = new System.Drawing.Point(443, 260);
             this.txtResultado.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtResultado.Name = "txtResultado";
             this.txtResultado.ReadOnly = true;
@@ -141,7 +141,7 @@ namespace GameTabuada
             this.txtMultiplicador.CausesValidation = false;
             this.txtMultiplicador.Font = new System.Drawing.Font("Cooper Black", 72F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtMultiplicador.ForeColor = System.Drawing.Color.Blue;
-            this.txtMultiplicador.Location = new System.Drawing.Point(752, 136);
+            this.txtMultiplicador.Location = new System.Drawing.Point(738, 138);
             this.txtMultiplicador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtMultiplicador.Name = "txtMultiplicador";
             this.txtMultiplicador.ReadOnly = true;
@@ -157,7 +157,7 @@ namespace GameTabuada
             this.btnConfiguracoes.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnConfiguracoes.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.btnConfiguracoes.ForeColor = System.Drawing.SystemColors.HotTrack;
-            this.btnConfiguracoes.Location = new System.Drawing.Point(1031, -2);
+            this.btnConfiguracoes.Location = new System.Drawing.Point(963, -1);
             this.btnConfiguracoes.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnConfiguracoes.Name = "btnConfiguracoes";
             this.btnConfiguracoes.Size = new System.Drawing.Size(45, 32);
@@ -170,7 +170,7 @@ namespace GameTabuada
             this.btnIniciarJogo.BackColor = System.Drawing.Color.White;
             this.btnIniciarJogo.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.btnIniciarJogo.ForeColor = System.Drawing.Color.Green;
-            this.btnIniciarJogo.Location = new System.Drawing.Point(474, 404);
+            this.btnIniciarJogo.Location = new System.Drawing.Point(426, 390);
             this.btnIniciarJogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIniciarJogo.Name = "btnIniciarJogo";
             this.btnIniciarJogo.Size = new System.Drawing.Size(175, 60);
@@ -184,9 +184,9 @@ namespace GameTabuada
             this.lblNomeTabuada.BackColor = System.Drawing.Color.SkyBlue;
             this.lblNomeTabuada.Font = new System.Drawing.Font("Cooper Black", 40F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblNomeTabuada.ForeColor = System.Drawing.Color.Blue;
-            this.lblNomeTabuada.Location = new System.Drawing.Point(10, 21);
+            this.lblNomeTabuada.Location = new System.Drawing.Point(23, 21);
             this.lblNomeTabuada.Name = "lblNomeTabuada";
-            this.lblNomeTabuada.Size = new System.Drawing.Size(1013, 95);
+            this.lblNomeTabuada.Size = new System.Drawing.Size(934, 95);
             this.lblNomeTabuada.TabIndex = 102;
             this.lblNomeTabuada.Text = "Matematicando";
             this.lblNomeTabuada.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -198,7 +198,7 @@ namespace GameTabuada
             this.txtQtdErros.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQtdErros.Font = new System.Drawing.Font("Arial Black", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtQtdErros.ForeColor = System.Drawing.Color.Red;
-            this.txtQtdErros.Location = new System.Drawing.Point(177, 178);
+            this.txtQtdErros.Location = new System.Drawing.Point(189, 178);
             this.txtQtdErros.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQtdErros.Name = "txtQtdErros";
             this.txtQtdErros.ReadOnly = true;
@@ -213,7 +213,7 @@ namespace GameTabuada
             this.txtQtdAcertos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.txtQtdAcertos.Font = new System.Drawing.Font("Arial Black", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtQtdAcertos.ForeColor = System.Drawing.Color.Blue;
-            this.txtQtdAcertos.Location = new System.Drawing.Point(177, 136);
+            this.txtQtdAcertos.Location = new System.Drawing.Point(189, 136);
             this.txtQtdAcertos.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtQtdAcertos.Name = "txtQtdAcertos";
             this.txtQtdAcertos.ReadOnly = true;
@@ -227,7 +227,7 @@ namespace GameTabuada
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.Red;
-            this.label4.Location = new System.Drawing.Point(15, 182);
+            this.label4.Location = new System.Drawing.Point(27, 182);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(119, 31);
             this.label4.TabIndex = 0;
@@ -238,7 +238,7 @@ namespace GameTabuada
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.Blue;
-            this.label3.Location = new System.Drawing.Point(15, 136);
+            this.label3.Location = new System.Drawing.Point(27, 136);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(142, 31);
             this.label3.TabIndex = 0;
@@ -254,7 +254,7 @@ namespace GameTabuada
             this.btnParar.BackColor = System.Drawing.Color.White;
             this.btnParar.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.btnParar.ForeColor = System.Drawing.Color.Red;
-            this.btnParar.Location = new System.Drawing.Point(680, 404);
+            this.btnParar.Location = new System.Drawing.Point(644, 390);
             this.btnParar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnParar.Name = "btnParar";
             this.btnParar.Size = new System.Drawing.Size(175, 60);
@@ -269,7 +269,7 @@ namespace GameTabuada
             this.txtTempo.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtTempo.Font = new System.Drawing.Font("Arial Black", 19F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.txtTempo.ForeColor = System.Drawing.Color.White;
-            this.txtTempo.Location = new System.Drawing.Point(76, 236);
+            this.txtTempo.Location = new System.Drawing.Point(88, 236);
             this.txtTempo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtTempo.Name = "txtTempo";
             this.txtTempo.ReadOnly = true;
@@ -283,7 +283,7 @@ namespace GameTabuada
             // 
             this.panel2.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel2.BackgroundImage")));
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(860, 23);
+            this.panel2.Location = new System.Drawing.Point(793, 23);
             this.panel2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(164, 85);
@@ -294,17 +294,17 @@ namespace GameTabuada
             // 
             this.panel3.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel3.BackgroundImage")));
             this.panel3.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel3.Location = new System.Drawing.Point(15, 23);
+            this.panel3.Location = new System.Drawing.Point(27, 23);
             this.panel3.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel3.Name = "panel3";
-            this.panel3.Size = new System.Drawing.Size(98, 87);
+            this.panel3.Size = new System.Drawing.Size(98, 85);
             this.panel3.TabIndex = 105;
             // 
             // panel4
             // 
             this.panel4.BackgroundImage = ((System.Drawing.Image)(resources.GetObject("panel4.BackgroundImage")));
             this.panel4.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel4.Location = new System.Drawing.Point(899, 359);
+            this.panel4.Location = new System.Drawing.Point(832, 383);
             this.panel4.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(125, 100);
@@ -315,7 +315,7 @@ namespace GameTabuada
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Cooper Black", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.Location = new System.Drawing.Point(375, 485);
+            this.label5.Location = new System.Drawing.Point(387, 485);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(491, 42);
             this.label5.TabIndex = 107;
@@ -324,22 +324,47 @@ namespace GameTabuada
             // 
             // pJogadores
             // 
+            this.pJogadores.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.pJogadores.Controls.Add(this.lblNomeJogador);
+            this.pJogadores.Controls.Add(this.btnUsuarios);
             this.pJogadores.Controls.Add(this.label1);
-            this.pJogadores.Location = new System.Drawing.Point(15, 296);
+            this.pJogadores.Location = new System.Drawing.Point(22, 296);
             this.pJogadores.Name = "pJogadores";
-            this.pJogadores.Size = new System.Drawing.Size(350, 230);
+            this.pJogadores.Size = new System.Drawing.Size(355, 242);
             this.pJogadores.TabIndex = 108;
+            // 
+            // btnUsuarios
+            // 
+            this.btnUsuarios.BackColor = System.Drawing.Color.White;
+            this.btnUsuarios.Font = new System.Drawing.Font("Cooper Black", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
+            this.btnUsuarios.ForeColor = System.Drawing.Color.Black;
+            this.btnUsuarios.Location = new System.Drawing.Point(22, 181);
+            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.btnUsuarios.Name = "btnUsuarios";
+            this.btnUsuarios.Size = new System.Drawing.Size(300, 48);
+            this.btnUsuarios.TabIndex = 112;
+            this.btnUsuarios.Text = "Configurar sala (F7)";
+            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.btnUsuarios.Click += new System.EventHandler(this.btnUsuarios_Click);
+            // 
+            // label1
+            // 
+            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
+            this.label1.Location = new System.Drawing.Point(5, 92);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(96, 80);
+            this.label1.TabIndex = 0;
             // 
             // lblSala
             // 
             this.lblSala.BackColor = System.Drawing.Color.SkyBlue;
             this.lblSala.Font = new System.Drawing.Font("Cooper Black", 25F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblSala.ForeColor = System.Drawing.Color.DarkRed;
-            this.lblSala.Location = new System.Drawing.Point(17, 300);
+            this.lblSala.Location = new System.Drawing.Point(29, 300);
             this.lblSala.Name = "lblSala";
             this.lblSala.Size = new System.Drawing.Size(340, 40);
             this.lblSala.TabIndex = 109;
-            this.lblSala.Text = "5 Ano";
+            this.lblSala.Text = "Sala 01";
             this.lblSala.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             // 
             // lblRodada
@@ -349,54 +374,31 @@ namespace GameTabuada
             this.lblRodada.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblRodada.ForeColor = System.Drawing.Color.Black;
             this.lblRodada.ImageAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.lblRodada.Location = new System.Drawing.Point(16, 350);
+            this.lblRodada.Location = new System.Drawing.Point(29, 350);
             this.lblRodada.Name = "lblRodada";
-            this.lblRodada.Size = new System.Drawing.Size(340, 30);
+            this.lblRodada.Size = new System.Drawing.Size(339, 30);
             this.lblRodada.TabIndex = 110;
             this.lblRodada.Text = "Rodada 1 de 2";
             this.lblRodada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // label1
-            // 
-            this.label1.Image = ((System.Drawing.Image)(resources.GetObject("label1.Image")));
-            this.label1.Location = new System.Drawing.Point(10, 100);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(80, 80);
-            this.label1.TabIndex = 0;
             // 
             // lblNomeJogador
             // 
             this.lblNomeJogador.BackColor = System.Drawing.Color.SkyBlue;
             this.lblNomeJogador.Font = new System.Drawing.Font("Cooper Black", 30F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.lblNomeJogador.ForeColor = System.Drawing.Color.DarkOrange;
-            this.lblNomeJogador.Location = new System.Drawing.Point(100, 390);
+            this.lblNomeJogador.Location = new System.Drawing.Point(94, 103);
             this.lblNomeJogador.Name = "lblNomeJogador";
-            this.lblNomeJogador.Size = new System.Drawing.Size(250, 70);
+            this.lblNomeJogador.Size = new System.Drawing.Size(250, 49);
             this.lblNomeJogador.TabIndex = 111;
-            this.lblNomeJogador.Text = "Dieferson";
-            this.lblNomeJogador.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            // 
-            // btnUsuarios
-            // 
-            this.btnUsuarios.BackColor = System.Drawing.Color.White;
-            this.btnUsuarios.Font = new System.Drawing.Font("Cooper Black", 11F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.btnUsuarios.ForeColor = System.Drawing.Color.Black;
-            this.btnUsuarios.Location = new System.Drawing.Point(35, 490);
-            this.btnUsuarios.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.btnUsuarios.Name = "btnUsuarios";
-            this.btnUsuarios.Size = new System.Drawing.Size(300, 30);
-            this.btnUsuarios.TabIndex = 112;
-            this.btnUsuarios.Text = "Configurar sala (F7)";
-            this.btnUsuarios.UseVisualStyleBackColor = false;
+            this.lblNomeJogador.Text = "Jogador01";
+            this.lblNomeJogador.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             // 
             // formJogoTabuada
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(1086, 541);
-            this.Controls.Add(this.btnUsuarios);
-            this.Controls.Add(this.lblNomeJogador);
+            this.ClientSize = new System.Drawing.Size(1008, 550);
             this.Controls.Add(this.lblRodada);
             this.Controls.Add(this.lblSala);
             this.Controls.Add(this.pJogadores);

@@ -1528,3 +1528,4 @@ C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTa
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.dll
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.pdb
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.genruntimeconfig.cache
+C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.FormConfiguracaoSala.resources

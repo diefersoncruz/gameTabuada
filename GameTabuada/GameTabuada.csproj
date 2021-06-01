@@ -5,7 +5,7 @@
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <UseWindowsForms>true</UseWindowsForms>
     <StartupObject>GameTabuada.Program</StartupObject>
-    <ApplicationIcon>geometry-1698595_640.ico</ApplicationIcon>
+    <ApplicationIcon>icones/geometry.ico</ApplicationIcon>
   </PropertyGroup>
 
   <ItemGroup>

@@ -123,8 +123,8 @@ C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\runtimes\win-x
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\runtimes\win-x86\native\Microsoft.CognitiveServices.Speech.extension.codec.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\runtimes\win-x86\native\Microsoft.CognitiveServices.Speech.extension.kws.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\runtimes\win-x86\native\Microsoft.CognitiveServices.Speech.extension.silk_codec.dll
-C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.csprojAssemblyReference.cache
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.FormConfiguracao.resources
+C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.FormConfiguracaoSala.resources
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.formJogoTabuada.resources
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.Properties.Resources.resources
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.csproj.GenerateResource.cache
