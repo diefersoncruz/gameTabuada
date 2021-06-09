@@ -22,17 +22,19 @@ namespace GameTabuada
         int qtdMinutos = 0;
         int qtdSegundos = 0;
         int tempoTotalSegundos = 0;
-        dadosConfiguracoes dadosConfigurados;
+        ModelConfiguracoes dadosConfigurados;
+        Configuracoes configuracoes;
 
         public formJogoTabuada()
         {
             InitializeComponent();
-            dadosConfigurados = new dadosConfiguracoes();
+            dadosConfigurados = new ModelConfiguracoes();
+            configuracoes = new Configuracoes();
             carregarConfiguracoesJson();
         }
         public void carregarConfiguracoesJson()
         {
-            dadosConfigurados = dadosConfigurados.carregarConfiguracoesArquivoJson();
+            dadosConfigurados = configuracoes.carregarConfiguracoesArquivoJson();
         }
         public void carregarConfiguracoesJogo()
         {

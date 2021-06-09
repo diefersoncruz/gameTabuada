@@ -5,18 +5,21 @@ namespace GameTabuada
 {
     public partial class FormConfiguracao : Form
     {
-        dadosConfiguracoes dadosConfiguracoes;
+        Configuracoes configuracoes;
+        ModelConfiguracoes dadosConfiguracoes;
         formJogoTabuada frmTabuda;
         public FormConfiguracao(formJogoTabuada frm)
         {
             InitializeComponent();
-            dadosConfiguracoes = new dadosConfiguracoes();
-            dadosConfiguracoes = dadosConfiguracoes.carregarConfiguracoesArquivoJson();
+            configuracoes = new Configuracoes();
+            dadosConfiguracoes = new ModelConfiguracoes();
+
+            dadosConfiguracoes = configuracoes.carregarConfiguracoesArquivoJson();
             preencherConfiguracoesUsuario(dadosConfiguracoes);
             frmTabuda = frm;
         }
 
-        private void preencherConfiguracoesUsuario(dadosConfiguracoes dados)
+        private void preencherConfiguracoesUsuario(ModelConfiguracoes dados)
         {
             txtConfigLimiteFatorA.Text = dados.limiteFatorA.ToString();
             txtConfigLimiteFatorB.Text = dados.limiteFatorB.ToString();
@@ -45,7 +48,7 @@ namespace GameTabuada
             //salva informações no arquivo Json
             try
             {
-                dadosConfiguracoes.salvarConfiguracoesArquivoJson(dadosConfiguracoes);
+                configuracoes.salvarConfiguracoes(dadosConfiguracoes);
                 // exibe mensagem
                 MessageBox.Show("Dados Salvos com sucesso!");
                 // fecha a tela de configuracoes

@@ -4,13 +4,13 @@
     <_LastSelectedProfileId>C:\workspace\c#\gameTabuada\GameTabuada\Properties\PublishProfiles\FolderProfile.pubxml</_LastSelectedProfileId>
   </PropertyGroup>
   <ItemGroup>
-    <Compile Update="FormConfiguracao.cs">
+    <Compile Update="views\FormConfiguracao.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="FormConfiguracaoSala.cs">
+    <Compile Update="views\FormConfiguracaoSala.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Update="formJogoTabuada.cs">
+    <Compile Update="views\formJogoTabuada.cs">
       <SubType>Form</SubType>
     </Compile>
   </ItemGroup>
