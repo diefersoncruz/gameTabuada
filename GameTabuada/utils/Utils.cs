@@ -10,9 +10,9 @@ namespace GameTabuada.utils
         {
             try
             {
-                string aux = File.ReadAllText(fileName);
-                aux = aux + jsonString;
-                File.WriteAllText(fileName, aux);
+//                string aux = File.ReadAllText(fileName);
+//               aux = aux + jsonString;
+                File.WriteAllText(fileName, jsonString);
             }
             catch (Exception erro)
             {

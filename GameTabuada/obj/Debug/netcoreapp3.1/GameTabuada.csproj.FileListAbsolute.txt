@@ -112,11 +112,6 @@ C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\GameTabuada.runt
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\GameTabuada.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\GameTabuada.pdb
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\Microsoft.CognitiveServices.Speech.csharp.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\Microsoft.DotNet.PlatformAbstractions.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\Microsoft.Extensions.DependencyModel.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\Microsoft.Extensions.PlatformAbstractions.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\Nancy.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\Newtonsoft.Json.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\runtimes\linux-arm\lib\netstandard2.0\Microsoft.CognitiveServices.Speech.csharp.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libMicrosoft.CognitiveServices.Speech.core.so
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Debug\netcoreapp3.1\runtimes\linux-arm\native\libMicrosoft.CognitiveServices.Speech.extension.codec.so
