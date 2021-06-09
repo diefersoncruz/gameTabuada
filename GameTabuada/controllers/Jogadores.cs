@@ -2,38 +2,43 @@
 using System.Windows.Forms;
 using System.Text.Json;
 using GameTabuada.utils;
+using GameTabuada.controllers;
 using System.Collections.Generic;
 
 namespace GameTabuada
 {
     public class Jogadores
     {
-        Utils fUteis = new Utils();
         string fileName = "dadosJogadores.json";
-        public IList<ModelJogadores> listaJogadores { get; set; }
+        Utils fUteis = new Utils();
+        JsonConversao jsonConversao = new JsonConversao();
 
-        public void salvarDadosJogadoresArquivoJson(ModelJogadores jogadores)
+        public void gerarArquivoJogadoresPadrao()
         {
-            fUteis.gravarArquivoJson(fileName, JsonSerializer.Serialize(jogadores));
+            ModelJogadores jogadores = new ModelJogadores();
+            jogadores.nomeJogador = "Jogador01";
+            fUteis.gravarArquivoJson(fileName,   jogadores);
         }
-        public ModelJogadores carregarJogadoresArquivoJson()
+        public void salvarListaJogadores(List<ModelJogadores> listaJogadores)
         {
-            ModelJogadores dados = new ModelJogadores();
+            fUteis.gravarListaArquivoJson(fileName, listaJogadores);
+        }
+        public List<ModelJogadores> carregarListaJogadores()
+        {
+            if (fUteis.getFileExits(fileName)== false)
+            {
+                gerarArquivoJogadoresPadrao();
+            }
             try
             {
-               if (fUteis.getFileExits(fileName))
-                {
-                    return JsonSerializer.Deserialize<ModelJogadores>(fUteis.lerArquivo(fileName)); 
-                }
-               else
-                {
-                    return dados;
-                }
+                    List<ModelJogadores> listaJogadores = new List<ModelJogadores>();
+                    listaJogadores = jsonConversao.ConverteJSonParaObject<List<ModelJogadores>>(fUteis.lerArquivo(fileName));
+                    return listaJogadores; 
             }
             catch (Exception erro)
             {
                 MessageBox.Show("Erro carregar os jogadores[" + erro + "]");
-                return dados;
+                return null;
             }
         }
 

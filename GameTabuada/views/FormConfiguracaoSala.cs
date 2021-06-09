@@ -12,6 +12,7 @@ namespace GameTabuada
     {
 
         ModelJogadores modelJogadores = new ModelJogadores();
+        List<ModelJogadores> listaJogadores = new List<ModelJogadores>();
         Jogadores jogadores = new Jogadores();
         formJogoTabuada frmTabuda;
         public FormConfiguracaoSala(formJogoTabuada frm)
@@ -24,9 +25,15 @@ namespace GameTabuada
 
         private void carregarJogadoresDataGrid()
         {
-            modelJogadores = jogadores.carregarJogadoresArquivoJson();
+            listaJogadores = jogadores.carregarListaJogadores();
             dtJogadores.Rows.Clear();
-            dtJogadores.Rows.Add(modelJogadores.nomeJogador);
+            if (listaJogadores != null)
+            {
+                foreach (ModelJogadores j in listaJogadores)
+                {
+                    dtJogadores.Rows.Add(j.nomeJogador);
+                }
+            }
         }
         private void salvarJogadores(){
             if (txtJogador.Text == "")
@@ -41,7 +48,16 @@ namespace GameTabuada
 
                 try
                 {
-                    jogadores.salvarDadosJogadoresArquivoJson(modelJogadores);
+                    if (listaJogadores == null )
+                    {
+                        listaJogadores = new List<ModelJogadores>();
+                        listaJogadores.Add(modelJogadores);
+                    }
+                    else
+                    {
+                        listaJogadores.Add(modelJogadores);
+                    }
+                    jogadores.salvarListaJogadores(listaJogadores);
                     MessageBox.Show("Dados salvos com sucesso!");
                     carregarJogadoresDataGrid();
                 }

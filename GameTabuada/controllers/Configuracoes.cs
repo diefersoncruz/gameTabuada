@@ -29,7 +29,7 @@ namespace GameTabuada
         }
         public void salvarConfiguracoes(ModelConfiguracoes dados)
         {
-            fUteis.gravarArquivoJson("configuracoesUsuarios.json", JsonSerializer.Serialize(dados));
+            fUteis.gravarArquivoJson("configuracoesUsuarios.json", dados);
         }
         public ModelConfiguracoes carregarConfiguracoesArquivoJson()
         {
