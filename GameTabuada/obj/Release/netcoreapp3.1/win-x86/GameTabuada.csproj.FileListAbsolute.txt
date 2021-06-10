@@ -1025,11 +1025,6 @@ C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\GameTa
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\GameTabuada.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\GameTabuada.pdb
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\Microsoft.CognitiveServices.Speech.csharp.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\Microsoft.DotNet.PlatformAbstractions.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\Microsoft.Extensions.DependencyModel.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\Microsoft.Extensions.PlatformAbstractions.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\Nancy.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\Newtonsoft.Json.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\Microsoft.CognitiveServices.Speech.core.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\Microsoft.CognitiveServices.Speech.extension.codec.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\Microsoft.CognitiveServices.Speech.extension.kws.dll

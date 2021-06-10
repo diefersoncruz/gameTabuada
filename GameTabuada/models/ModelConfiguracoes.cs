@@ -1,6 +1,4 @@
-﻿using System;
-
-namespace GameTabuada
+﻿namespace GameTabuada
 {
     public class ModelConfiguracoes
     {
@@ -8,13 +6,13 @@ namespace GameTabuada
         public int limiteNegativoFatorA { get; set; }
         public int limiteNegativoFatorB { get; set; }
         public int limiteFatorB { get; set; }
-        public Boolean fixarFatorA { get; set; }
+        public bool fixarFatorA { get; set; }
         public int qtdMinutos { get; set; }
         public int qtdSegundos { get; set; }
-        public Boolean operacoesDeDivisao { get; set; }
-        public Boolean operacoesDeMultiplicacao { get; set; }
-        public Boolean operacoesDeAdicao { get; set; }
-        public Boolean operacoesDeSubtracao { get; set; }
+        public bool operacoesDeDivisao { get; set; }
+        public bool operacoesDeMultiplicacao { get; set; }
+        public bool operacoesDeAdicao { get; set; }
+        public bool operacoesDeSubtracao { get; set; }
         public int qtdCasasDecimaisResultadoDivisao{ get; set; }
     }
 }
