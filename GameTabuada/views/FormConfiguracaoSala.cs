@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Windows.Forms;
+using GameTabuada.utils;
 
 namespace GameTabuada
 {
@@ -17,6 +18,8 @@ namespace GameTabuada
         Sala salas = new Sala();
         
         formJogoTabuada frmTabuda;
+        Utils fUteis = new Utils();
+
         public FormConfiguracaoSala(formJogoTabuada frm)
         {
             InitializeComponent();
@@ -38,6 +41,7 @@ namespace GameTabuada
                     dtJogadores.Rows.Add(j.nomeJogador, j.salaJogador);
                 }
             }
+            carregarSalasDataGrid();
         }
         private void carregarSalasDataGrid()
         {
@@ -70,7 +74,7 @@ namespace GameTabuada
         private void salvarJogadores(){
             if (txtJogador.Text == "")
             {
-                MessageBox.Show("Campo Jogador deve estar preenchido!");
+                 fUteis.ExibirMensagemUsuario("Campo Jogador deve estar preenchido!");
             }
             else
             {
@@ -88,12 +92,11 @@ namespace GameTabuada
                 try
                 {
                     jogadores.salvarListaJogadores(listaJogadores);
-                    MessageBox.Show("Dados salvos com sucesso!");
                     carregarJogadoresDataGrid();
                 }
                 catch (Exception erro)
                 {
-                    MessageBox.Show("Erro ao salvar jogadores! [" + erro + "]");
+                    fUteis.ExibirMensagemUsuario("Erro ao salvar jogadores! [" + erro + "]");
                 }
             }
         }
@@ -102,7 +105,7 @@ namespace GameTabuada
         {
             if (txtSala.Text == "")
             {
-                MessageBox.Show("Campo Sala deve estar preenchido!");
+                fUteis.ExibirMensagemUsuario("Campo Sala deve estar preenchido!");
             }
             else
             {
@@ -118,13 +121,12 @@ namespace GameTabuada
                 try
                 {
                     salas.salvarListaSalas(listaSalas);
-                    MessageBox.Show("Dados salvos com sucesso!");
                     carregarSalasDataGrid();
                     carregarComboBoxSalasJogadores();
                 }
                 catch (Exception erro)
                 {
-                    MessageBox.Show("Erro ao salvar Salas! [" + erro + "]");
+                    fUteis.ExibirMensagemUsuario("Erro ao salvar Salas! [" + erro + "]");
                 }
             }
         }
@@ -137,6 +139,107 @@ namespace GameTabuada
         private void btnSalvarSala_Click(object sender, EventArgs e)
         {
             SalvarSalas();
+        }
+
+        private void dtJogadores_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((dtJogadores.CurrentRow != null) && (dtJogadores.CurrentRow.IsNewRow == false))
+            {
+                txtJogador.Text = dtJogadores.CurrentRow.Cells["dtJogadoresEditJogador"].Value.ToString();
+                cbSalaJogador.Text = dtJogadores.CurrentRow.Cells["dtJogadoresCBSala"].Value.ToString();
+            }
+        }
+
+        public void ExcluirJogador()
+        {
+            // valida se a linha atual é nova 
+            if ((dtJogadores.CurrentRow != null) && (dtJogadores.CurrentRow.IsNewRow == false))
+            {
+                // Pega o nome do jogador atual
+                string jogador = dtJogadores.CurrentRow.Cells["dtJogadoresEditJogador"].Value.ToString();
+                if (fUteis.ConfirmarAcaoUsuario("Deseja realmente excluir o jogador " + jogador + " ?"))
+                {
+                    // realiza a tentativa de exclusão do jogador
+                    try
+                    {
+                        jogadores.excluirJogadorArquivoJson(jogador);
+                        carregarJogadoresDataGrid();
+                    }catch(Exception erro)
+                    {
+                        fUteis.ExibirMensagemUsuario("Erro ao excluir jogador ["+erro+"]!");
+                    }
+                }
+            }
+        }
+
+        public void ExcluirSala()
+        {
+            // valida se a linha atual é nova 
+            if ((dtSalas.CurrentRow != null) && (dtSalas.CurrentRow.IsNewRow == false))
+            {
+                // Pega o nome da sala atual
+                string sala = dtSalas.CurrentRow.Cells["dtSalasEditSala"].Value.ToString();
+                if (fUteis.ConfirmarAcaoUsuario("Deseja realmente excluir a sala " + sala + " ?"))
+                {
+                    // realiza a tentativa de exclusão do jogador
+                    try
+                    {
+                        salas.excluirSalaArquivoJson(sala);
+                        carregarSalasDataGrid();
+                    }
+                    catch (Exception erro)
+                    {
+                        fUteis.ExibirMensagemUsuario("Erro ao excluir sala [" + erro + "]!");
+                    }
+                }
+            }
+        }
+        private void btnExcluirJogador_Click(object sender, EventArgs e)
+        {
+            ExcluirJogador();
+        }
+        private void btnExcluirSala_Click(object sender, EventArgs e)
+        {
+            ExcluirSala();
+        }
+
+        private void txtJogador_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                salvarJogadores();
+                txtJogador.SelectAll();
+            }
+        }
+        private void txtSala_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                SalvarSalas();
+                txtSala.SelectAll();
+            }
+
+        }
+
+        private void FormConfiguracaoSala_Shown(object sender, EventArgs e)
+        {
+            txtJogador.Focus();
+        }
+
+        private void dtJogadores_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                ExcluirJogador();
+            }
+        }
+
+        private void dtSalas_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Delete)
+            {
+                ExcluirSala();
+            }
         }
     }
 }

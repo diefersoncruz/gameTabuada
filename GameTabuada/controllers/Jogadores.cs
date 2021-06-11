@@ -37,10 +37,37 @@ namespace GameTabuada
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro carregar os jogadores[" + erro + "]");
+                fUteis.ExibirMensagemUsuario("Erro carregar os jogadores[" + erro + "]");
                 return null;
             }
         }
 
+        public void excluirJogadorArquivoJson(string jogador)
+        {
+            // inicia as variaveis
+            List<ModelJogadores> listaJogadores = new List<ModelJogadores>();
+            listaJogadores = carregarListaJogadores();
+            bool jogadorExcluido = false;
+
+            // Percorre lista de jogadores
+            if (listaJogadores != null)
+            {
+                // percorre a lista de jogadores
+                foreach (ModelJogadores j in listaJogadores)
+                {
+                    if (j.nomeJogador == jogador)
+                    {
+                        listaJogadores.Remove(j);
+                        jogadorExcluido = true;
+                        break;
+                    }
+                }
+            }
+            // salva nova lista de jogadores
+            if (jogadorExcluido) 
+            {
+                salvarListaJogadores(listaJogadores);
+            }
+        }
     }
 }

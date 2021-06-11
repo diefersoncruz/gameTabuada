@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameTabuada.utils;
+using System;
 using System.Media;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -24,7 +25,7 @@ namespace GameTabuada
         int tempoTotalSegundos = 0;
         ModelConfiguracoes dadosConfigurados;
         Configuracoes configuracoes;
-
+        Utils fUteis = new Utils();
         public formJogoTabuada()
         {
             InitializeComponent();
@@ -64,13 +65,8 @@ namespace GameTabuada
             // valida se existe um jogo em andamento
             if (getJogoEmAndamento())
             {
-                string message = "Deseja Realmente iniciar um novo jogo?";
-                string caption = "Confirmar Inicio novo Jogo";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result;
-                result = MessageBox.Show(message, caption, buttons);
                 // valida o retorno do usuário
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (fUteis.ConfirmarAcaoUsuario("Deseja Realmente iniciar um novo jogo ?"))
                 {
                     return true;
                 }
@@ -90,13 +86,8 @@ namespace GameTabuada
             // valida se existe um jogo em andamento
             if (getJogoEmAndamento())
             {
-                string message = "Deseja Realmente abrir a tela de configurações? Isso irá parar o jogo atual!";
-                string caption = "Confirmar abertura tela configurações";
-                MessageBoxButtons buttons = MessageBoxButtons.YesNo;
-                DialogResult result;
-                result = MessageBox.Show(message, caption, buttons);
                 // valida o retorno do usuário
-                if (result == System.Windows.Forms.DialogResult.Yes)
+                if (fUteis.ConfirmarAcaoUsuario("Deseja Realmente abrir a tela de configurações? Isso irá parar o jogo atual!"))
                 {
                     return true;
                 }

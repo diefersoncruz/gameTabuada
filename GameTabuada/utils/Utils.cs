@@ -18,7 +18,7 @@ namespace GameTabuada.utils
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro salvar dados [" + erro + ']');
+                ExibirMensagemUsuario("Erro salvar dados [" + erro + ']');
             }
         }
         public void gravarListaArquivoJson<T>(string fileName, T objList)
@@ -30,7 +30,7 @@ namespace GameTabuada.utils
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro salvar dados [" + erro + ']');
+                ExibirMensagemUsuario("Erro salvar dados [" + erro + ']');
             }
         }
 
@@ -44,12 +44,12 @@ namespace GameTabuada.utils
                 }
                 catch (Exception erro)
                 {
-                    MessageBox.Show("Falha ao ler ao arquivo (" + fileName + ") [" + erro + ']');
+                    ExibirMensagemUsuario("Falha ao ler ao arquivo (" + fileName + ") [" + erro + ']');
                     return "";
                 }
             }else
             {
-                MessageBox.Show("Arquivo ( "+fileName+" ) não encontrado!");
+                ExibirMensagemUsuario("Arquivo ( "+fileName+" ) não encontrado!");
                 return null;
             }
         }
@@ -57,6 +57,19 @@ namespace GameTabuada.utils
         public Boolean getFileExits(string fileName)
         {
             return File.Exists(fileName);
+        }
+
+        public bool ConfirmarAcaoUsuario(string message)
+        {
+            DialogResult result = MessageBox.Show(message, "Confirmar", MessageBoxButtons.YesNo);
+
+            if (result == DialogResult.Yes) {return true;}
+            else { return false; }
+        }
+
+        public void ExibirMensagemUsuario(string message)
+        {
+            MessageBox.Show(message);
         }
     }
 }

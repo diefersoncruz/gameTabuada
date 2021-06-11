@@ -47,7 +47,7 @@ namespace GameTabuada
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro carregar informações do usuário " + erro);
+                fUteis.ExibirMensagemUsuario("Erro carregar informações do usuário " + erro);
                 return dados;
             }
         }

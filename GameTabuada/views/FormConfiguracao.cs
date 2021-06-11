@@ -1,4 +1,5 @@
-﻿using System;
+﻿using GameTabuada.utils;
+using System;
 using System.Windows.Forms;
 
 namespace GameTabuada
@@ -8,6 +9,7 @@ namespace GameTabuada
         Configuracoes configuracoes;
         ModelConfiguracoes dadosConfiguracoes;
         formJogoTabuada frmTabuda;
+        Utils fUteis = new Utils();
         public FormConfiguracao(formJogoTabuada frm)
         {
             InitializeComponent();
@@ -50,14 +52,14 @@ namespace GameTabuada
             {
                 configuracoes.salvarConfiguracoes(dadosConfiguracoes);
                 // exibe mensagem
-                MessageBox.Show("Dados Salvos com sucesso!");
+                fUteis.ExibirMensagemUsuario("Dados Salvos com sucesso!");
                 // fecha a tela de configuracoes
                 this.Dispose();
                 frmTabuda.carregarConfiguracoesJson();
             }
             catch(Exception erro)
             {
-                MessageBox.Show("Erro ao salvar arquivo" + erro);
+                fUteis.ExibirMensagemUsuario("Erro ao salvar arquivo" + erro);
             }
         }
 
@@ -65,7 +67,7 @@ namespace GameTabuada
         {
             if ((cbDivisao.Checked == false) && (cbMultiplicacao.Checked == false) && (cbAdicao.Checked == false) && (cbSubtracao.Checked == false))
             {
-                MessageBox.Show("Ao menos uma operação matemática deverá ser selecionada!");
+                fUteis.ExibirMensagemUsuario("Ao menos uma operação matemática deverá ser selecionada!");
                 return false;
             }
             else { return true; }

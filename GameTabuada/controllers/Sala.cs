@@ -37,8 +37,35 @@ namespace GameTabuada
             }
             catch (Exception erro)
             {
-                MessageBox.Show("Erro carregar Salas [" + erro + "]");
+                fUteis.ExibirMensagemUsuario("Erro carregar Salas [" + erro + "]");
                 return null;
+            }
+        }
+        public void excluirSalaArquivoJson(string sala)
+        {
+            // inicia as variaveis
+            List<ModelSalas> listaSalas = new List<ModelSalas>();
+            listaSalas = carregarListaSalas();
+            bool salaExcluida = false;
+
+            // Percorre lista de salas
+            if (listaSalas != null)
+            {
+                // percorre a lista de jogadores
+                foreach (ModelSalas j in listaSalas)
+                {
+                    if (j.nomeSala == sala)
+                    {
+                        listaSalas.Remove(j);
+                        salaExcluida = true;
+                        break;
+                    }
+                }
+            }
+            // salva nova lista de jogadores
+            if (salaExcluida)
+            {
+                salvarListaSalas(listaSalas);
             }
         }
     }
