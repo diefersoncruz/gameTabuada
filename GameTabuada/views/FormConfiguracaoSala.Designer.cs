@@ -66,10 +66,11 @@ namespace GameTabuada
             this.tbControlJogadores.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.tbControlJogadores.ImeMode = System.Windows.Forms.ImeMode.NoControl;
             this.tbControlJogadores.ItemSize = new System.Drawing.Size(150, 30);
-            this.tbControlJogadores.Location = new System.Drawing.Point(12, 12);
+            this.tbControlJogadores.Location = new System.Drawing.Point(14, 16);
+            this.tbControlJogadores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbControlJogadores.Name = "tbControlJogadores";
             this.tbControlJogadores.SelectedIndex = 0;
-            this.tbControlJogadores.Size = new System.Drawing.Size(600, 400);
+            this.tbControlJogadores.Size = new System.Drawing.Size(686, 533);
             this.tbControlJogadores.SizeMode = System.Windows.Forms.TabSizeMode.Fixed;
             this.tbControlJogadores.TabIndex = 1;
             // 
@@ -86,28 +87,28 @@ namespace GameTabuada
             this.tbJogadores.Controls.Add(this.btnSalvarJogador);
             this.tbJogadores.Font = new System.Drawing.Font("Cooper Black", 12F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.tbJogadores.Location = new System.Drawing.Point(4, 34);
+            this.tbJogadores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbJogadores.Name = "tbJogadores";
-            this.tbJogadores.Padding = new System.Windows.Forms.Padding(3);
-            this.tbJogadores.Size = new System.Drawing.Size(592, 362);
+            this.tbJogadores.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbJogadores.Size = new System.Drawing.Size(678, 495);
             this.tbJogadores.TabIndex = 0;
             this.tbJogadores.Text = "Jogadores";
             // 
             // cbSalaJogador
             // 
             this.cbSalaJogador.FormattingEnabled = true;
-            this.cbSalaJogador.Location = new System.Drawing.Point(147, 53);
-            this.cbSalaJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cbSalaJogador.Location = new System.Drawing.Point(168, 71);
             this.cbSalaJogador.Name = "cbSalaJogador";
-            this.cbSalaJogador.Size = new System.Drawing.Size(169, 27);
+            this.cbSalaJogador.Size = new System.Drawing.Size(193, 31);
             this.cbSalaJogador.TabIndex = 10;
             // 
             // label3
             // 
             this.label3.Font = new System.Drawing.Font("Cooper Black", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label3.Location = new System.Drawing.Point(17, 53);
+            this.label3.Location = new System.Drawing.Point(19, 71);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(124, 27);
+            this.label3.Size = new System.Drawing.Size(142, 36);
             this.label3.TabIndex = 9;
             this.label3.Text = "Sala : ";
             // 
@@ -115,9 +116,9 @@ namespace GameTabuada
             // 
             this.label1.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.Red;
-            this.label1.Location = new System.Drawing.Point(330, 14);
+            this.label1.Location = new System.Drawing.Point(377, 19);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(235, 30);
+            this.label1.Size = new System.Drawing.Size(269, 40);
             this.label1.TabIndex = 8;
             this.label1.Text = "* Deve conter no máximo 11 caracteres *";
             this.label1.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -125,9 +126,10 @@ namespace GameTabuada
             // btnExcluirJogador
             // 
             this.btnExcluirJogador.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.btnExcluirJogador.Location = new System.Drawing.Point(426, 223);
+            this.btnExcluirJogador.Location = new System.Drawing.Point(487, 297);
+            this.btnExcluirJogador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExcluirJogador.Name = "btnExcluirJogador";
-            this.btnExcluirJogador.Size = new System.Drawing.Size(139, 44);
+            this.btnExcluirJogador.Size = new System.Drawing.Size(159, 59);
             this.btnExcluirJogador.TabIndex = 7;
             this.btnExcluirJogador.Text = "Excluir";
             this.btnExcluirJogador.UseVisualStyleBackColor = true;
@@ -139,12 +141,13 @@ namespace GameTabuada
             this.dtJogadores.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dtJogadoresEditJogador,
             this.dtJogadoresCBSala});
-            this.dtJogadores.Location = new System.Drawing.Point(17, 99);
+            this.dtJogadores.Location = new System.Drawing.Point(19, 132);
+            this.dtJogadores.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtJogadores.Name = "dtJogadores";
             this.dtJogadores.RowHeadersWidth = 50;
             this.dtJogadores.RowTemplate.Height = 30;
             this.dtJogadores.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.CellSelect;
-            this.dtJogadores.Size = new System.Drawing.Size(404, 269);
+            this.dtJogadores.Size = new System.Drawing.Size(462, 359);
             this.dtJogadores.TabIndex = 6;
             this.dtJogadores.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtJogadores_CellClick);
             this.dtJogadores.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtJogadores_KeyUp);
@@ -171,11 +174,10 @@ namespace GameTabuada
             // txtJogador
             // 
             this.txtJogador.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtJogador.Location = new System.Drawing.Point(147, 14);
-            this.txtJogador.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtJogador.Location = new System.Drawing.Point(168, 19);
             this.txtJogador.MaxLength = 11;
             this.txtJogador.Name = "txtJogador";
-            this.txtJogador.Size = new System.Drawing.Size(169, 32);
+            this.txtJogador.Size = new System.Drawing.Size(193, 38);
             this.txtJogador.TabIndex = 0;
             this.txtJogador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtJogador.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtJogador_KeyUp);
@@ -184,18 +186,19 @@ namespace GameTabuada
             // 
             this.label2.Font = new System.Drawing.Font("Cooper Black", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label2.Location = new System.Drawing.Point(17, 17);
+            this.label2.Location = new System.Drawing.Point(19, 23);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(124, 27);
+            this.label2.Size = new System.Drawing.Size(142, 36);
             this.label2.TabIndex = 4;
             this.label2.Text = "Jogador :";
             // 
             // btnSalvarJogador
             // 
             this.btnSalvarJogador.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.btnSalvarJogador.Location = new System.Drawing.Point(426, 134);
+            this.btnSalvarJogador.Location = new System.Drawing.Point(487, 179);
+            this.btnSalvarJogador.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSalvarJogador.Name = "btnSalvarJogador";
-            this.btnSalvarJogador.Size = new System.Drawing.Size(139, 44);
+            this.btnSalvarJogador.Size = new System.Drawing.Size(159, 59);
             this.btnSalvarJogador.TabIndex = 2;
             this.btnSalvarJogador.Text = "Salvar";
             this.btnSalvarJogador.UseVisualStyleBackColor = true;
@@ -212,9 +215,10 @@ namespace GameTabuada
             this.tbSalas.Controls.Add(this.dtSalas);
             this.tbSalas.ForeColor = System.Drawing.Color.Black;
             this.tbSalas.Location = new System.Drawing.Point(4, 34);
+            this.tbSalas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.tbSalas.Name = "tbSalas";
-            this.tbSalas.Padding = new System.Windows.Forms.Padding(3);
-            this.tbSalas.Size = new System.Drawing.Size(592, 362);
+            this.tbSalas.Padding = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.tbSalas.Size = new System.Drawing.Size(678, 495);
             this.tbSalas.TabIndex = 1;
             this.tbSalas.Text = "Salas";
             // 
@@ -222,9 +226,9 @@ namespace GameTabuada
             // 
             this.label6.Font = new System.Drawing.Font("Cooper Black", 16F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label6.Location = new System.Drawing.Point(18, 27);
+            this.label6.Location = new System.Drawing.Point(21, 36);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(124, 27);
+            this.label6.Size = new System.Drawing.Size(142, 36);
             this.label6.TabIndex = 12;
             this.label6.Text = "Sala :";
             this.label6.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -233,9 +237,10 @@ namespace GameTabuada
             // 
             this.btnSalvarSala.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.btnSalvarSala.ForeColor = System.Drawing.Color.Black;
-            this.btnSalvarSala.Location = new System.Drawing.Point(428, 127);
+            this.btnSalvarSala.Location = new System.Drawing.Point(489, 169);
+            this.btnSalvarSala.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnSalvarSala.Name = "btnSalvarSala";
-            this.btnSalvarSala.Size = new System.Drawing.Size(139, 44);
+            this.btnSalvarSala.Size = new System.Drawing.Size(159, 59);
             this.btnSalvarSala.TabIndex = 11;
             this.btnSalvarSala.Text = "Salvar";
             this.btnSalvarSala.UseVisualStyleBackColor = true;
@@ -245,9 +250,9 @@ namespace GameTabuada
             // 
             this.label5.Font = new System.Drawing.Font("Arial Rounded MT Bold", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.Red;
-            this.label5.Location = new System.Drawing.Point(332, 27);
+            this.label5.Location = new System.Drawing.Point(379, 36);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(235, 30);
+            this.label5.Size = new System.Drawing.Size(269, 40);
             this.label5.TabIndex = 16;
             this.label5.Text = "* Deve conter no máximo 11 caracteres *";
             this.label5.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
@@ -255,11 +260,10 @@ namespace GameTabuada
             // txtSala
             // 
             this.txtSala.Font = new System.Drawing.Font("Arial", 16F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.txtSala.Location = new System.Drawing.Point(148, 27);
-            this.txtSala.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.txtSala.Location = new System.Drawing.Point(169, 36);
             this.txtSala.MaxLength = 11;
             this.txtSala.Name = "txtSala";
-            this.txtSala.Size = new System.Drawing.Size(169, 32);
+            this.txtSala.Size = new System.Drawing.Size(193, 38);
             this.txtSala.TabIndex = 13;
             this.txtSala.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             this.txtSala.KeyUp += new System.Windows.Forms.KeyEventHandler(this.txtSala_KeyUp);
@@ -268,9 +272,10 @@ namespace GameTabuada
             // 
             this.btnExcluirSala.Font = new System.Drawing.Font("Cooper Black", 20F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.btnExcluirSala.ForeColor = System.Drawing.Color.Black;
-            this.btnExcluirSala.Location = new System.Drawing.Point(428, 215);
+            this.btnExcluirSala.Location = new System.Drawing.Point(489, 287);
+            this.btnExcluirSala.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.btnExcluirSala.Name = "btnExcluirSala";
-            this.btnExcluirSala.Size = new System.Drawing.Size(139, 44);
+            this.btnExcluirSala.Size = new System.Drawing.Size(159, 59);
             this.btnExcluirSala.TabIndex = 15;
             this.btnExcluirSala.Text = "Excluir";
             this.btnExcluirSala.UseVisualStyleBackColor = true;
@@ -281,12 +286,14 @@ namespace GameTabuada
             this.dtSalas.ColumnHeadersHeight = 29;
             this.dtSalas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dtSalasEditSala});
-            this.dtSalas.Location = new System.Drawing.Point(18, 67);
+            this.dtSalas.Location = new System.Drawing.Point(21, 89);
+            this.dtSalas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.dtSalas.Name = "dtSalas";
             this.dtSalas.RowHeadersWidth = 51;
             this.dtSalas.RowTemplate.Height = 25;
-            this.dtSalas.Size = new System.Drawing.Size(404, 294);
+            this.dtSalas.Size = new System.Drawing.Size(462, 392);
             this.dtSalas.TabIndex = 14;
+            this.dtSalas.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dtSalas_CellClick);
             this.dtSalas.KeyUp += new System.Windows.Forms.KeyEventHandler(this.dtSalas_KeyUp);
             // 
             // dtSalasEditSala
@@ -299,12 +306,13 @@ namespace GameTabuada
             // 
             // FormConfiguracaoSala
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(624, 421);
+            this.ClientSize = new System.Drawing.Size(713, 561);
             this.Controls.Add(this.tbControlJogadores);
             this.ForeColor = System.Drawing.Color.Black;
+            this.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
             this.Name = "FormConfiguracaoSala";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configurações Jogadores";

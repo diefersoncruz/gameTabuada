@@ -1243,7 +1243,6 @@ C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\dbgshi
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\hostfxr.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\hostpolicy.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\mscordaccore.dll
-C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\mscordaccore_x86_x86_4.700.21.16201.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\mscordbi.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\mscorrc.debug.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\mscorrc.dll
@@ -1511,7 +1510,6 @@ C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\PenImc
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\PresentationNative_cor3.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\vcruntime140_cor3.dll
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\wpfgfx_cor3.dll
-C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.csprojAssemblyReference.cache
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.FormConfiguracao.resources
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.formJogoTabuada.resources
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.Properties.Resources.resources
@@ -1524,3 +1522,4 @@ C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTa
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.pdb
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.genruntimeconfig.cache
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.FormConfiguracaoSala.resources
+C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\mscordaccore_x86_x86_4.700.21.26205.dll

@@ -130,4 +130,4 @@ C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.cs
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.dll
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.pdb
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.genruntimeconfig.cache
-C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.csprojAssemblyReference.cache
+C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\GameTabuada.csproj.AssemblyReference.cache

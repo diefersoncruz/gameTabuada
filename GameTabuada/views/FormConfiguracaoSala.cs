@@ -87,16 +87,26 @@ namespace GameTabuada
                 {
                     listaJogadores = new List<ModelJogadores>();
                 }
-                listaJogadores.Add(modelJogadores);
+                // valida se o jogador já está cadastrado
+                if (jogadores.JogadorJaCadastrado(modelJogadores.nomeJogador, modelJogadores.salaJogador) == false)
+                {
+                    listaJogadores.Add(modelJogadores);
 
-                try
+                    // tenta salvar os jogadores
+                    try
+                    {
+                        jogadores.salvarListaJogadores(listaJogadores);
+                        carregarJogadoresDataGrid();
+                    }
+                    catch (Exception erro)
+                    {
+                        fUteis.ExibirMensagemUsuario("Erro ao salvar jogadores! [" + erro + "]");
+                    }
+                }else
                 {
-                    jogadores.salvarListaJogadores(listaJogadores);
-                    carregarJogadoresDataGrid();
-                }
-                catch (Exception erro)
-                {
-                    fUteis.ExibirMensagemUsuario("Erro ao salvar jogadores! [" + erro + "]");
+                    fUteis.ExibirMensagemUsuario("Atenção! Já existe um jogador ("
+                          + modelJogadores.nomeJogador + ") cadastrado na sala ("
+                          + modelJogadores.salaJogador + ") .");
                 }
             }
         }
@@ -110,24 +120,30 @@ namespace GameTabuada
             else
             {
                 modelSala.nomeSala = txtSala.Text;
-
-                // valida se a lista está vazia, caso sim é iniciado uma nova lista
-                if (listaSalas == null)
+                // valida se a sala ja está cadastrada
+                if (salas.salaJaCadasrtrada(modelSala.nomeSala) == false)
                 {
-                    listaSalas = new List<ModelSalas>();
-                }
-                listaSalas.Add(modelSala);
-
-                try
+                    // valida se a lista está vazia, caso sim é iniciado uma nova lista
+                    if (listaSalas == null)
+                    {
+                        listaSalas = new List<ModelSalas>();
+                    }
+                    listaSalas.Add(modelSala);
+                    // salva o cadastro
+                    try
+                    {
+                        salas.salvarListaSalas(listaSalas);
+                        carregarSalasDataGrid();
+                        carregarComboBoxSalasJogadores();
+                    }
+                    catch (Exception erro)
+                    {
+                        fUteis.ExibirMensagemUsuario("Erro ao salvar Salas! [" + erro + "]");
+                    }
+                }else
                 {
-                    salas.salvarListaSalas(listaSalas);
-                    carregarSalasDataGrid();
-                    carregarComboBoxSalasJogadores();
-                }
-                catch (Exception erro)
-                {
-                    fUteis.ExibirMensagemUsuario("Erro ao salvar Salas! [" + erro + "]");
-                }
+                    fUteis.ExibirMensagemUsuario("Atenção! Sala já cadastrada!");
+                }                
             }
         }
 
@@ -239,6 +255,14 @@ namespace GameTabuada
             if (e.KeyCode == Keys.Delete)
             {
                 ExcluirSala();
+            }
+        }
+
+        private void dtSalas_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if ((dtSalas.CurrentRow != null) && (dtSalas.CurrentRow.IsNewRow == false))
+            {
+                txtSala.Text = dtSalas.CurrentRow.Cells["dtSalasEditSala"].Value.ToString();                
             }
         }
     }

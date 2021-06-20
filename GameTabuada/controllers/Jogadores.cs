@@ -13,6 +13,26 @@ namespace GameTabuada
         Utils fUteis = new Utils();
         JsonConversao jsonConversao = new JsonConversao();
 
+
+        public bool JogadorJaCadastrado(string jogador, string sala)
+        {
+            List<ModelJogadores> listaJogadores = new List<ModelJogadores>();
+            listaJogadores = carregarListaJogadores();
+            bool jogadorJaCadastrado = false;
+
+            // percorre a lista de jogadores
+            foreach (ModelJogadores j in listaJogadores)
+            {
+                if ((j.nomeJogador == jogador) &&(j.salaJogador == sala))
+                {
+                    jogadorJaCadastrado = true;
+                    break;
+                }
+            }
+
+            return jogadorJaCadastrado;
+        }
+
         public void gerarArquivoJogadoresPadrao()
         {
             ModelJogadores jogadores = new ModelJogadores();
@@ -23,6 +43,7 @@ namespace GameTabuada
         {
             fUteis.gravarListaArquivoJson(fileName, listaJogadores);
         }
+
         public List<ModelJogadores> carregarListaJogadores()
         {
             if (fUteis.getFileExits(fileName)== false)
