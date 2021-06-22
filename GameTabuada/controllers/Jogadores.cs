@@ -62,6 +62,32 @@ namespace GameTabuada
                 return null;
             }
         }
+        public List<ModelJogadores> carregarListaJogadoresSala(string sala)
+        {
+            if (fUteis.getFileExits(fileName) == false)
+            {
+                gerarArquivoJogadoresPadrao();
+            }
+            try
+            {
+                List<ModelJogadores> listaJogadores = new List<ModelJogadores>();
+                listaJogadores = jsonConversao.ConverteJSonParaObject<List<ModelJogadores>>(fUteis.lerArquivo(fileName));
+                // percorre lista de jogadores e excluí jogadores que não são da lista selecionada
+                foreach (ModelJogadores j in listaJogadores)
+                {
+                    if (j.salaJogador != sala)
+                    {
+                        listaJogadores.Remove(j);
+                    }
+                }
+                return listaJogadores;
+            }
+            catch (Exception erro)
+            {
+                fUteis.ExibirMensagemUsuario("Erro carregar os jogadores[" + erro + "]");
+                return null;
+            }
+        }
 
         public void excluirJogadorArquivoJson(string jogador)
         {

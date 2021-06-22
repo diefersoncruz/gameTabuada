@@ -148,7 +148,6 @@ namespace GameTabuada
             this.txtMultiplicador.Size = new System.Drawing.Size(219, 118);
             this.txtMultiplicador.TabIndex = 99;
             this.txtMultiplicador.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtMultiplicador.TextChanged += new System.EventHandler(this.txtMultiplicador_TextChanged);
             // 
             // btnConfiguracoes
             // 
@@ -190,7 +189,6 @@ namespace GameTabuada
             this.lblNomeTabuada.TabIndex = 102;
             this.lblNomeTabuada.Text = "Matematicando";
             this.lblNomeTabuada.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblNomeTabuada.Click += new System.EventHandler(this.lblNomeTabuada_Click);
             // 
             // txtQtdErros
             // 
@@ -277,7 +275,6 @@ namespace GameTabuada
             this.txtTempo.TabIndex = 1;
             this.txtTempo.Text = "00:00";
             this.txtTempo.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
-            this.txtTempo.TextChanged += new System.EventHandler(this.txtTempo_TextChanged);
             // 
             // panel2
             // 
@@ -288,7 +285,6 @@ namespace GameTabuada
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(164, 85);
             this.panel2.TabIndex = 104;
-            this.panel2.Paint += new System.Windows.Forms.PaintEventHandler(this.panel2_Paint);
             // 
             // panel3
             // 
@@ -309,7 +305,6 @@ namespace GameTabuada
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(125, 100);
             this.panel4.TabIndex = 106;
-            this.panel4.Paint += new System.Windows.Forms.PaintEventHandler(this.panel4_Paint);
             // 
             // label5
             // 

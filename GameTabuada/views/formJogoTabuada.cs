@@ -1,5 +1,6 @@
 ﻿using GameTabuada.utils;
 using System;
+using System.Collections.Generic;
 using System.Media;
 using System.Security.Cryptography.X509Certificates;
 using System.Text;
@@ -23,9 +24,18 @@ namespace GameTabuada
         int qtdMinutos = 0;
         int qtdSegundos = 0;
         int tempoTotalSegundos = 0;
+        public string pFormTabuadaSalaJogo;
+        public int pFormTabuadaNumeroRodadas;
+        int rodadaAtual, jogadorAtual, numeroJogadores;
+
         ModelConfiguracoes dadosConfigurados;
+        ModelJogadores modelJogadores =  new ModelJogadores();
+        List<ModelJogadores> listaJogadores = new List<ModelJogadores>();
+        Jogadores jogadores = new Jogadores();
+
         Configuracoes configuracoes;
         Utils fUteis = new Utils();
+
         public formJogoTabuada()
         {
             InitializeComponent();
@@ -60,6 +70,12 @@ namespace GameTabuada
                 return false;
             }
         }
+
+        public void iniciarCronometro()
+        {
+            timerDuracao.Start();
+            timerDuracao.Enabled = true;
+        }
         public Boolean confirmarInicioNovoJogo()
         {
             // valida se existe um jogo em andamento
@@ -72,7 +88,6 @@ namespace GameTabuada
                 }
                 else
                 {
-                    timerDuracao.Start();
                     return false;
                 }
             } // caso não haja jogo em andamento retorna true
@@ -103,12 +118,35 @@ namespace GameTabuada
             }
         }
 
+        private void carregarConfiguracoesIniciais()
+        {
+            FormOpcoesJogo frmOpcoes = new FormOpcoesJogo(this);
+            frmOpcoes.ShowDialog();
+        }
 
-        public void IniciarJogo()
-        {   // valida se é será iniciado um novo jogo
-            if (confirmarInicioNovoJogo())
+        public void carregarJogadoresSalaAtual()
+        {
+            // valida se foi informado sala de jogadores
+            if (pFormTabuadaSalaJogo != "")
+            {
+                listaJogadores = jogadores.carregarListaJogadoresSala(pFormTabuadaSalaJogo);            
+            }
+            else
+            {
+                ModelJogadores jogador = new ModelJogadores();
+                jogador.nomeJogador = "Jogador01";
+                listaJogadores.Add(jogador);
+            }
+        }
+
+        public void iniciarNovoJogo()
+        {
+            if (jogadorAtual <= numeroJogadores)
             {
                 carregarConfiguracoesJogo();
+                preencherLabelRodada();
+                preencherLabelJogadorAtual();
+                iniciarCronometro();
                 zerarVariaveis();
                 setarQtdAcertos("0");
                 setarQtdErros("0");
@@ -116,8 +154,45 @@ namespace GameTabuada
                 GeradorGameMatematica();
                 txtResultado.ReadOnly = false;
                 txtResultado.Enabled = true;
-                timerDuracao.Enabled = true;
                 txtResultado.Focus();
+            }
+            else
+            {
+                paraJogo();
+            }
+        }
+
+        public void preencherLabelRodada()
+        {
+            lblRodada.Text = "Rodada " + rodadaAtual.ToString() + " de " + pFormTabuadaNumeroRodadas.ToString();
+        }
+
+        public void preencherLabelJogadorAtual()
+        {
+            if (numeroJogadores > 1)
+            {
+                // preenche o primeiro jogador 
+                lblNomeJogador.Text = listaJogadores[jogadorAtual].nomeJogador;
+            }
+        }
+
+        public void iniciarRodadas()
+        {
+            carregarJogadoresSalaAtual();
+            lblSala.Text = pFormTabuadaSalaJogo;
+            numeroJogadores = listaJogadores.Count;
+            jogadorAtual = 0;
+            rodadaAtual = 1;
+            // Inicia um novo jogo
+            iniciarNovoJogo();
+        }
+
+        public void IniciarJogo()
+        {   // valida se é será iniciado um novo jogo
+            if (confirmarInicioNovoJogo())
+            {
+                carregarConfiguracoesIniciais();
+                iniciarRodadas();
             }
         }
 
@@ -267,7 +342,7 @@ namespace GameTabuada
             }
         }
 
-        public void PararJogo()
+        public void paraJogo()
         {
             zerarVariaveis();
             txtResultado.ReadOnly = true;
@@ -278,6 +353,20 @@ namespace GameTabuada
             LimparDadosTxtResultado();
         }
 
+        public void iniciarNovaRodada()
+        {
+            if (rodadaAtual == pFormTabuadaNumeroRodadas)
+            {
+                paraJogo();
+            }
+            else
+            {
+                rodadaAtual += 1;
+                jogadorAtual = 0;
+                iniciarNovoJogo();
+            }
+        }
+
         public void zerarVariaveis()
         {
            fator = 0;
@@ -286,11 +375,11 @@ namespace GameTabuada
            qtdAcertosUsuario = 0;
            qtdErrosUsuario = 0;
            setarMultiplicador("");
-            setarFator("");
+           setarFator("");
         }
         private void btnParar_Click(object sender, EventArgs e)
         {
-            PararJogo();
+            paraJogo();
         }
 
 
@@ -302,7 +391,7 @@ namespace GameTabuada
             }
             else if (e.KeyCode == Keys.F3)
             {
-                PararJogo();
+                paraJogo();
             }
             else if (e.KeyCode == Keys.F4)
             {
@@ -319,30 +408,11 @@ namespace GameTabuada
             IniciarJogo();
         }
 
-        private void timerDuracao_Tick(object sender, EventArgs e)
-        {
-            if (tempoTotalSegundos != 0 )
-            {
-                if (qtdSegundos == 0 & qtdMinutos > 0)
-                {
-                    qtdMinutos--;
-                    qtdSegundos = 60;
-                }
-                qtdSegundos--;
-                tempoTotalSegundos--;
-                setarTempo(qtdMinutos.ToString() +':'+ qtdSegundos.ToString());
-            }
-            else
-            {
-                PararJogo();
-            }
-        }
-
         public void AbrirTelaConfiguracoesJogadores()
         {
             if (confirmarAberturaTelaConfiguracao())
             {
-                PararJogo();
+                paraJogo();
                 FormConfiguracaoSala frmConfiguracao = new FormConfiguracaoSala(this);
                 frmConfiguracao.ShowDialog();
             }
@@ -353,7 +423,7 @@ namespace GameTabuada
         {
             if (confirmarAberturaTelaConfiguracao())
             {
-                PararJogo();
+                paraJogo();
                 FormConfiguracao frmConfiguracao = new FormConfiguracao(this);
                 frmConfiguracao.ShowDialog();
             }
@@ -364,34 +434,37 @@ namespace GameTabuada
             AbrirTelaConfiguracoes();
         }
 
-        private void panel4_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void panel2_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
-
-        private void lblNomeTabuada_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtMultiplicador_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
-        private void txtTempo_TextChanged(object sender, EventArgs e)
-        {
-
-        }
-
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             AbrirTelaConfiguracoesJogadores();
         }
+        private void timerDuracao_Tick(object sender, EventArgs e)
+        {
+            if (tempoTotalSegundos != 0)
+            {
+                if (qtdSegundos == 0 & qtdMinutos > 0)
+                {
+                    qtdMinutos--;
+                    qtdSegundos = 60;
+                }
+                qtdSegundos--;
+                tempoTotalSegundos--;
+                setarTempo(qtdMinutos.ToString() + ':' + qtdSegundos.ToString());
+            }
+            else
+            {
+                if (jogadorAtual == numeroJogadores)
+                {
+                    iniciarNovaRodada();
+                }
+                else
+                {
+                    jogadorAtual += 1;
+                    iniciarNovoJogo();
+                }
+            }
+        }
+
+
     }
 }

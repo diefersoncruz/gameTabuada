@@ -202,6 +202,7 @@ namespace GameTabuada
                     {
                         salas.excluirSalaArquivoJson(sala);
                         carregarSalasDataGrid();
+                        carregarComboBoxSalasJogadores();
                     }
                     catch (Exception erro)
                     {
