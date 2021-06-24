@@ -3,6 +3,7 @@ using System;
 using System.Text.Json;
 using System.IO;
 using System.Windows.Forms;
+using GameTabuada.views;
 
 namespace GameTabuada.utils
 {
@@ -59,17 +60,25 @@ namespace GameTabuada.utils
             return File.Exists(fileName);
         }
 
-        public bool ConfirmarAcaoUsuario(string message)
-        {
-            DialogResult result = MessageBox.Show(message, "Confirmar", MessageBoxButtons.YesNo);
 
-            if (result == DialogResult.Yes) {return true;}
-            else { return false; }
+        public void ExibirMensagemUsuario(string mensagem)
+        {
+            FormMsg formMsg = new FormMsg(mensagem, "OK", "", false);
+            formMsg.ShowDialog();
         }
-
-        public void ExibirMensagemUsuario(string message)
+        public bool ConfirmarAcaoUsuario(string mensagem, string msgBtnOK = "Sim", string msgBtnCancel = "Não")
         {
-            MessageBox.Show(message);
+            FormMsg formMsg = new FormMsg(mensagem, msgBtnOK, msgBtnCancel);
+            formMsg.ShowDialog();
+
+            if (formMsg.DialogResult == DialogResult.OK)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
     }
 }

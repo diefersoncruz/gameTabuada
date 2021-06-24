@@ -74,7 +74,7 @@ namespace GameTabuada
         private void salvarJogadores(){
             if (txtJogador.Text == "")
             {
-                 fUteis.ExibirMensagemUsuario("Campo Jogador deve estar preenchido!");
+                 fUteis.ExibirMensagemUsuario("Preencha o jogador!");
             }
             else
             {
@@ -115,7 +115,7 @@ namespace GameTabuada
         {
             if (txtSala.Text == "")
             {
-                fUteis.ExibirMensagemUsuario("Campo Sala deve estar preenchido!");
+                fUteis.ExibirMensagemUsuario("Preencha a Sala!");
             }
             else
             {

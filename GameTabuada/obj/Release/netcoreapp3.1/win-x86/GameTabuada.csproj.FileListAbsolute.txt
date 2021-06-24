@@ -1523,3 +1523,5 @@ C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTa
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.genruntimeconfig.cache
 C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.FormConfiguracaoSala.resources
 C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\netcoreapp3.1\win-x86\mscordaccore_x86_x86_4.700.21.26205.dll
+C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.views.FormMsg.resources
+C:\workspace\c#\gameTabuada\GameTabuada\obj\Release\netcoreapp3.1\win-x86\GameTabuada.FormOpcoesJogo.resources

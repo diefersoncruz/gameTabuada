@@ -43,9 +43,10 @@
             this.btnIniciarJogo.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.btnIniciarJogo.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.btnIniciarJogo.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnIniciarJogo.Location = new System.Drawing.Point(91, 429);
+            this.btnIniciarJogo.Location = new System.Drawing.Point(80, 322);
+            this.btnIniciarJogo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.btnIniciarJogo.Name = "btnIniciarJogo";
-            this.btnIniciarJogo.Size = new System.Drawing.Size(408, 87);
+            this.btnIniciarJogo.Size = new System.Drawing.Size(357, 65);
             this.btnIniciarJogo.TabIndex = 1;
             this.btnIniciarJogo.Text = "Iniciar Jogo";
             this.btnIniciarJogo.UseVisualStyleBackColor = false;
@@ -55,10 +56,9 @@
             // 
             this.cbJogadorUnico.AutoSize = true;
             this.cbJogadorUnico.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.cbJogadorUnico.Location = new System.Drawing.Point(194, 55);
-            this.cbJogadorUnico.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbJogadorUnico.Location = new System.Drawing.Point(170, 41);
             this.cbJogadorUnico.Name = "cbJogadorUnico";
-            this.cbJogadorUnico.Size = new System.Drawing.Size(244, 36);
+            this.cbJogadorUnico.Size = new System.Drawing.Size(194, 29);
             this.cbJogadorUnico.TabIndex = 2;
             this.cbJogadorUnico.Text = "Jogador Único";
             this.cbJogadorUnico.UseVisualStyleBackColor = true;
@@ -68,19 +68,18 @@
             // 
             this.cbSelecaoSalaJogo.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.cbSelecaoSalaJogo.FormattingEnabled = true;
-            this.cbSelecaoSalaJogo.Location = new System.Drawing.Point(296, 164);
-            this.cbSelecaoSalaJogo.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.cbSelecaoSalaJogo.Location = new System.Drawing.Point(259, 123);
             this.cbSelecaoSalaJogo.Name = "cbSelecaoSalaJogo";
-            this.cbSelecaoSalaJogo.Size = new System.Drawing.Size(203, 39);
+            this.cbSelecaoSalaJogo.Size = new System.Drawing.Size(178, 33);
             this.cbSelecaoSalaJogo.TabIndex = 3;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label1.Location = new System.Drawing.Point(91, 167);
+            this.label1.Location = new System.Drawing.Point(80, 125);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(199, 32);
+            this.label1.Size = new System.Drawing.Size(157, 25);
             this.label1.TabIndex = 4;
             this.label1.Text = "Sala do Jogo:";
             // 
@@ -88,9 +87,9 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
-            this.label2.Location = new System.Drawing.Point(91, 254);
+            this.label2.Location = new System.Drawing.Point(80, 190);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(190, 32);
+            this.label2.Size = new System.Drawing.Size(150, 25);
             this.label2.TabIndex = 5;
             this.label2.Text = "Nº  Rodadas:";
             // 
@@ -98,10 +97,9 @@
             // 
             this.txtNumeroRodadas.Font = new System.Drawing.Font("Cooper Black", 16.2F, System.Drawing.FontStyle.Italic, System.Drawing.GraphicsUnit.Point);
             this.txtNumeroRodadas.ImeMode = System.Windows.Forms.ImeMode.NoControl;
-            this.txtNumeroRodadas.Location = new System.Drawing.Point(296, 251);
-            this.txtNumeroRodadas.Margin = new System.Windows.Forms.Padding(3, 4, 3, 4);
+            this.txtNumeroRodadas.Location = new System.Drawing.Point(259, 188);
             this.txtNumeroRodadas.Name = "txtNumeroRodadas";
-            this.txtNumeroRodadas.Size = new System.Drawing.Size(138, 38);
+            this.txtNumeroRodadas.Size = new System.Drawing.Size(178, 32);
             this.txtNumeroRodadas.TabIndex = 6;
             this.txtNumeroRodadas.Text = "1";
             this.txtNumeroRodadas.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
@@ -109,10 +107,10 @@
             // 
             // FormOpcoesJogo
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.SkyBlue;
-            this.ClientSize = new System.Drawing.Size(664, 565);
+            this.ClientSize = new System.Drawing.Size(529, 424);
             this.Controls.Add(this.txtNumeroRodadas);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -120,6 +118,7 @@
             this.Controls.Add(this.cbJogadorUnico);
             this.Controls.Add(this.btnIniciarJogo);
             this.KeyPreview = true;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "FormOpcoesJogo";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Configurações Iniciais";

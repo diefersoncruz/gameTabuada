@@ -1,4 +1,5 @@
 ﻿using GameTabuada.utils;
+using GameTabuada.views;
 using System;
 using System.Collections.Generic;
 using System.Media;
@@ -138,27 +139,59 @@ namespace GameTabuada
                 listaJogadores.Add(jogador);
             }
         }
+        
+        private string getNomeJogadorAtual()
+        {
+            return listaJogadores[jogadorAtual].nomeJogador;
+        }
 
+        public void pararCronometro()
+        {
+            timerDuracao.Stop();
+        }
         public void iniciarNovoJogo()
         {
-            if (jogadorAtual <= numeroJogadores)
+            pararCronometro();
+            // validação é menor, por que o jogador atual é inicializado com 0
+            if (jogadorAtual < numeroJogadores)
             {
-                carregarConfiguracoesJogo();
-                preencherLabelRodada();
-                preencherLabelJogadorAtual();
-                iniciarCronometro();
-                zerarVariaveis();
-                setarQtdAcertos("0");
-                setarQtdErros("0");
-                LimparDadosTxtResultado();
-                GeradorGameMatematica();
-                txtResultado.ReadOnly = false;
-                txtResultado.Enabled = true;
-                txtResultado.Focus();
+                if (fUteis.ConfirmarAcaoUsuario( getNomeJogadorAtual() + " está preparado(a) ?"))
+                {
+                    carregarConfiguracoesJogo();
+                    preencherLabelRodada();
+                    preencherLabelJogadorAtual();
+                    iniciarCronometro();
+                    ZerarVariaveis();
+                    setarQtdAcertos("0");
+                    setarQtdErros("0");
+                    LimparDadosTxtResultado();
+                    GeradorGameMatematica();
+                    txtResultado.ReadOnly = false;
+                    txtResultado.Enabled = true;
+                    txtResultado.Focus();
+                }
+                else
+                {
+                    if (RodadaFinal() == false)
+                    {
+                        if (fUteis.ConfirmarAcaoUsuario("Deseja ir para próximo jogador ?"))
+                        {
+                            jogadorAtual += 1;
+                            iniciarNovoJogo();
+                        }
+                        else
+                        {
+                            pararJogo();
+                        }
+                    }else
+                    {
+                        pararJogo();
+                    }
+                }
             }
             else
             {
-                paraJogo();
+                IniciarNovaRodada();
             }
         }
 
@@ -169,10 +202,10 @@ namespace GameTabuada
 
         public void preencherLabelJogadorAtual()
         {
-            if (numeroJogadores > 1)
+            if (numeroJogadores >= 1)
             {
                 // preenche o primeiro jogador 
-                lblNomeJogador.Text = listaJogadores[jogadorAtual].nomeJogador;
+                lblNomeJogador.Text = getNomeJogadorAtual();
             }
         }
 
@@ -342,9 +375,9 @@ namespace GameTabuada
             }
         }
 
-        public void paraJogo()
+        public void pararJogo()
         {
-            zerarVariaveis();
+            ZerarVariaveis();
             txtResultado.ReadOnly = true;
             txtResultado.Enabled = false;
             timerDuracao.Enabled = false;
@@ -353,21 +386,33 @@ namespace GameTabuada
             LimparDadosTxtResultado();
         }
 
-        public void iniciarNovaRodada()
+        public bool RodadaFinal()
         {
             if (rodadaAtual == pFormTabuadaNumeroRodadas)
             {
-                paraJogo();
+                return true;
             }
             else
             {
+                return false;
+            }
+        }
+        public void IniciarNovaRodada()
+        {
+            if (RodadaFinal())
+            {
+                pararJogo();
+            }
+            else
+            {
+                fUteis.ExibirMensagemUsuario("Iniciando próxima rodada...");
                 rodadaAtual += 1;
                 jogadorAtual = 0;
                 iniciarNovoJogo();
             }
         }
 
-        public void zerarVariaveis()
+        public void ZerarVariaveis()
         {
            fator = 0;
            multiplicador = 0;
@@ -379,7 +424,7 @@ namespace GameTabuada
         }
         private void btnParar_Click(object sender, EventArgs e)
         {
-            paraJogo();
+            pararJogo();
         }
 
 
@@ -391,7 +436,7 @@ namespace GameTabuada
             }
             else if (e.KeyCode == Keys.F3)
             {
-                paraJogo();
+                pararJogo();
             }
             else if (e.KeyCode == Keys.F4)
             {
@@ -412,7 +457,7 @@ namespace GameTabuada
         {
             if (confirmarAberturaTelaConfiguracao())
             {
-                paraJogo();
+                pararJogo();
                 FormConfiguracaoSala frmConfiguracao = new FormConfiguracaoSala(this);
                 frmConfiguracao.ShowDialog();
             }
@@ -423,7 +468,7 @@ namespace GameTabuada
         {
             if (confirmarAberturaTelaConfiguracao())
             {
-                paraJogo();
+                pararJogo();
                 FormConfiguracao frmConfiguracao = new FormConfiguracao(this);
                 frmConfiguracao.ShowDialog();
             }
@@ -453,9 +498,10 @@ namespace GameTabuada
             }
             else
             {
-                if (jogadorAtual == numeroJogadores)
+                // adicionado -1 devido variável de jogadorAtual ser inicializada em 0
+                if (jogadorAtual == numeroJogadores-1)
                 {
-                    iniciarNovaRodada();
+                    IniciarNovaRodada();
                 }
                 else
                 {
@@ -464,7 +510,5 @@ namespace GameTabuada
                 }
             }
         }
-
-
     }
 }

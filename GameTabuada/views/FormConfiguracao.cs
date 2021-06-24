@@ -70,7 +70,11 @@ namespace GameTabuada
                 fUteis.ExibirMensagemUsuario("Ao menos uma operação matemática deverá ser selecionada!");
                 return false;
             }
-            else { return true; }
+            else 
+            { 
+                return 
+                    true; 
+            }
         }
 
         private void btnSalvarConfiguracoes_Click(object sender, EventArgs e)
