@@ -147,11 +147,10 @@ namespace GameTabuada
 
         public void pararCronometro()
         {
-            timerDuracao.Stop();
+            timerDuracao.Dispose();
         }
         public void iniciarNovoJogo()
         {
-            pararCronometro();
             // validação é menor, por que o jogador atual é inicializado com 0
             if (jogadorAtual < numeroJogadores)
             {
@@ -172,7 +171,18 @@ namespace GameTabuada
                 }
                 else
                 {
-                    if (RodadaFinal() == false)
+                    if ((jogadorAtual == numeroJogadores - 1) && (rodadaAtual < pFormTabuadaNumeroRodadas))
+                    {
+                        if (fUteis.ConfirmarAcaoUsuario("Deseja iniciar uma nova rodada ?"))
+                        {
+                            IniciarNovaRodada();
+                        }
+                        else
+                        {
+                            pararJogo();
+                        }
+                    }
+                    else
                     {
                         if (fUteis.ConfirmarAcaoUsuario("Deseja ir para próximo jogador ?"))
                         {
@@ -181,11 +191,22 @@ namespace GameTabuada
                         }
                         else
                         {
-                            pararJogo();
+                            if (rodadaAtual < pFormTabuadaNumeroRodadas)
+                            {
+                                if (fUteis.ConfirmarAcaoUsuario("Deseja iniciar uma nova rodada ?"))
+                                {
+                                    IniciarNovaRodada();
+                                }
+                                else
+                                {
+                                    pararJogo();
+                                }
+                            }
+                            else
+                            {
+                                pararJogo();
+                            }
                         }
-                    }else
-                    {
-                        pararJogo();
                     }
                 }
             }
@@ -501,10 +522,12 @@ namespace GameTabuada
                 // adicionado -1 devido variável de jogadorAtual ser inicializada em 0
                 if (jogadorAtual == numeroJogadores-1)
                 {
+                    pararCronometro();
                     IniciarNovaRodada();
                 }
                 else
                 {
+                    pararCronometro();
                     jogadorAtual += 1;
                     iniciarNovoJogo();
                 }
