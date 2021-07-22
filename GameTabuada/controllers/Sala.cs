@@ -20,7 +20,7 @@ namespace GameTabuada
             fUteis.gravarArquivoJson(fileName, salas);
         }
 
-        public bool salaJaCadasrtrada(string sala)
+        public bool salaJaCadastrada(string sala)
         {
             List<ModelSalas> listaSalas = new List<ModelSalas>();
             listaSalas = carregarListaSalas();

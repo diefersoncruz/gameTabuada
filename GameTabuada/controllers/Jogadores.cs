@@ -64,29 +64,33 @@ namespace GameTabuada
         }
         public List<ModelJogadores> carregarListaJogadoresSala(string sala)
         {
+            List<ModelJogadores> listaAux = new List<ModelJogadores>();
+            List<ModelJogadores> listaJogadores = new List<ModelJogadores>();
+            // valida se o arquivo existe
             if (fUteis.getFileExits(fileName) == false)
             {
                 gerarArquivoJogadoresPadrao();
             }
-            try
+            else
             {
-                List<ModelJogadores> listaJogadores = new List<ModelJogadores>();
-                listaJogadores = jsonConversao.ConverteJSonParaObject<List<ModelJogadores>>(fUteis.lerArquivo(fileName));
-                // percorre lista de jogadores e excluí jogadores que não são da lista selecionada
-                foreach (ModelJogadores j in listaJogadores)
+                try
                 {
-                    if (j.salaJogador != sala)
+                    listaAux = jsonConversao.ConverteJSonParaObject<List<ModelJogadores>>(fUteis.lerArquivo(fileName));
+                    // percorre lista de jogadores e excluí jogadores que não são da lista selecionada
+                    foreach (ModelJogadores j in listaAux)
                     {
-                        listaJogadores.Remove(j);
+                        if (j.salaJogador == sala)
+                        {
+                            listaJogadores.Add(j);
+                        }
                     }
                 }
-                return listaJogadores;
+                catch (Exception erro)
+                {
+                    fUteis.ExibirMensagemUsuario("Erro carregar os jogadores[" + erro + "]");
+                }
             }
-            catch (Exception erro)
-            {
-                fUteis.ExibirMensagemUsuario("Erro carregar os jogadores[" + erro + "]");
-                return null;
-            }
+            return listaJogadores;
         }
 
         public void excluirJogadorArquivoJson(string jogador)

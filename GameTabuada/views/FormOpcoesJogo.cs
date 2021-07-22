@@ -41,12 +41,14 @@ namespace GameTabuada
         {
             // Preenche as varíaveis globais de controle de jogo
             frmTabuada.pFormTabuadaNumeroRodadas = Convert.ToInt32(txtNumeroRodadas.Text);
-            frmTabuada.pFormTabuadaSalaJogo = cbSelecaoSalaJogo.Text;            
+            frmTabuada.pFormTabuadaSalaJogo = cbSelecaoSalaJogo.Text;
+            frmTabuada.bJogadorUnico = false;
             // valida seleção do jogo
             if (cbSelecaoSalaJogo.Text == "")
             {
                 if (fUteis.ConfirmarAcaoUsuario("Atenção! Não foi informado sala, portanto jogo será iniciado com jogador único!"))
                 {
+                    frmTabuada.bJogadorUnico = true;
                     this.DialogResult = DialogResult.OK;
                 }
             }

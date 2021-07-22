@@ -27,12 +27,14 @@ namespace GameTabuada
         int tempoTotalSegundos = 0;
         public string pFormTabuadaSalaJogo;
         public int pFormTabuadaNumeroRodadas;
+        public bool bJogadorUnico;
         int rodadaAtual, jogadorAtual, numeroJogadores;
 
         ModelConfiguracoes dadosConfigurados;
         ModelJogadores modelJogadores =  new ModelJogadores();
         List<ModelJogadores> listaJogadores = new List<ModelJogadores>();
         Jogadores jogadores = new Jogadores();
+        Sala sala = new Sala();
 
         Configuracoes configuracoes;
         Utils fUteis = new Utils();
@@ -134,6 +136,7 @@ namespace GameTabuada
             }
             else
             {
+                listaJogadores.Clear();
                 ModelJogadores jogador = new ModelJogadores();
                 jogador.nomeJogador = "Jogador01";
                 listaJogadores.Add(jogador);
@@ -405,6 +408,15 @@ namespace GameTabuada
             timerDuracao.Dispose();
             setarTempo("00:00");
             LimparDadosTxtResultado();
+            // salva os resultados do jogo, caso a flag jogador Unico não esteja selecionada
+            if (bJogadorUnico == false)
+            {
+                jogadores.salvarListaJogadores(listaJogadores);
+            }
+            else
+            {
+                fUteis.ExibirMensagemUsuario("Total de acertos ["+listaJogadores[0].pontuacaoJogador+"]");
+            }
         }
 
         public bool RodadaFinal()
@@ -504,6 +516,19 @@ namespace GameTabuada
         {
             AbrirTelaConfiguracoesJogadores();
         }
+
+        private void salvarPontuacaoJogadorAtual()
+        {
+            if (rodadaAtual == 1)
+            {
+                listaJogadores[jogadorAtual].pontuacaoJogador = Convert.ToInt32(txtQtdAcertos.Text);
+            }
+            else
+            {
+                listaJogadores[jogadorAtual].pontuacaoJogador += Convert.ToInt32(txtQtdAcertos.Text);
+            }
+        }
+
         private void timerDuracao_Tick(object sender, EventArgs e)
         {
             if (tempoTotalSegundos != 0)
@@ -522,11 +547,13 @@ namespace GameTabuada
                 // adicionado -1 devido variável de jogadorAtual ser inicializada em 0
                 if (jogadorAtual == numeroJogadores-1)
                 {
+                    salvarPontuacaoJogadorAtual();
                     pararCronometro();
                     IniciarNovaRodada();
                 }
                 else
                 {
+                    salvarPontuacaoJogadorAtual();
                     pararCronometro();
                     jogadorAtual += 1;
                     iniciarNovoJogo();

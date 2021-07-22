@@ -38,7 +38,13 @@ namespace GameTabuada
             {
                 foreach (ModelJogadores j in listaJogadores)
                 {
-                    dtJogadores.Rows.Add(j.nomeJogador, j.salaJogador);
+                    if (salas.salaJaCadastrada(j.salaJogador))
+                    {
+                        dtJogadores.Rows.Add(j.nomeJogador, j.salaJogador);
+                    }else 
+                    {
+                        dtJogadores.Rows.Add(j.nomeJogador);
+                    }
                 }
             }
             carregarSalasDataGrid();
@@ -121,7 +127,7 @@ namespace GameTabuada
             {
                 modelSala.nomeSala = txtSala.Text;
                 // valida se a sala ja está cadastrada
-                if (salas.salaJaCadasrtrada(modelSala.nomeSala) == false)
+                if (salas.salaJaCadastrada(modelSala.nomeSala) == false)
                 {
                     // valida se a lista está vazia, caso sim é iniciado uma nova lista
                     if (listaSalas == null)
@@ -162,7 +168,15 @@ namespace GameTabuada
             if ((dtJogadores.CurrentRow != null) && (dtJogadores.CurrentRow.IsNewRow == false))
             {
                 txtJogador.Text = dtJogadores.CurrentRow.Cells["dtJogadoresEditJogador"].Value.ToString();
-                cbSalaJogador.Text = dtJogadores.CurrentRow.Cells["dtJogadoresCBSala"].Value.ToString();
+                // valida se a sala está preenchida
+                if (dtJogadores.CurrentRow.Cells["dtJogadoresCBSala"].Value != null)
+                {
+                    cbSalaJogador.Text = dtJogadores.CurrentRow.Cells["dtJogadoresCBSala"].Value.ToString();
+                }
+                else
+                {
+                    cbSalaJogador.Text = "";
+                }
             }
         }
 
@@ -187,7 +201,6 @@ namespace GameTabuada
                 }
             }
         }
-
         public void ExcluirSala()
         {
             // valida se a linha atual é nova 
