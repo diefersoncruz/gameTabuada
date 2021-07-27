@@ -1,0 +1,2 @@
+C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\GameMatematica\GameTabuada.pdb
+C:\workspace\c#\gameTabuada\GameTabuada\bin\Release\GameMatematica\GameTabuada.exe

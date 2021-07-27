@@ -48,7 +48,15 @@ namespace GameTabuada
         }
         public void carregarConfiguracoesJson()
         {
-            dadosConfigurados = configuracoes.carregarConfiguracoesArquivoJson();
+            if (fUteis.getFileExits(configuracoes.fileNameConfiguracoes))
+            {
+                dadosConfigurados = configuracoes.carregarConfiguracoesArquivoJson();
+            }
+            else
+            {
+                dadosConfigurados = configuracoes.carregarConfiguracoesArquivoJson();
+                AbrirTelaConfiguracoes();
+            }
         }
         public void carregarConfiguracoesJogo()
         {

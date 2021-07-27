@@ -9,6 +9,8 @@ namespace GameTabuada
     {
         Utils fUteis = new Utils();
 
+        public string fileNameConfiguracoes = "configuracoesUsuarios.json";
+
         private void gerarArquivoConfiguracoesPadrao()
         {
             ModelConfiguracoes dados = new ModelConfiguracoes();
@@ -29,16 +31,16 @@ namespace GameTabuada
         }
         public void salvarConfiguracoes(ModelConfiguracoes dados)
         {
-            fUteis.gravarArquivoJson("configuracoesUsuarios.json", dados);
+            fUteis.gravarArquivoJson(fileNameConfiguracoes, dados);
         }
         public ModelConfiguracoes carregarConfiguracoesArquivoJson()
         {
             ModelConfiguracoes dados = new ModelConfiguracoes();
             try
             {
-                if (fUteis.getFileExits("configuracoesUsuarios.json"))
+                if (fUteis.getFileExits(fileNameConfiguracoes))
                 {
-                    return JsonSerializer.Deserialize<ModelConfiguracoes>(fUteis.lerArquivo("configuracoesUsuarios.json")); ;
+                    return JsonSerializer.Deserialize<ModelConfiguracoes>(fUteis.lerArquivo(fileNameConfiguracoes)); ;
                 }
                 else{
                     gerarArquivoConfiguracoesPadrao();
