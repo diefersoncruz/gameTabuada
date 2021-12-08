@@ -1,13 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "O/1v75J9qYtxN07O0fvkW3qge9m1PmOlSvzX0PbTcuJ6ffK3LaiIQ5w0bLlAzJq1DO5mA1erWuFhEL9LWgE3BQ==",
+  "dgSpecHash": "zQ763t7G/g5BCOnCTkJgbeTIXKtVq8dbHgcMb7ga6cmeSzpmJiMPhTjc58UEvsYPob4nP5F0TOY5tU7U+ISc0A==",
   "success": true,
-  "projectFilePath": "C:\\workspace\\c#\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
+  "projectFilePath": "C:\\Workspace\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
   "expectedPackageFiles": [
-    "C:\\Users\\diefe\\.nuget\\packages\\microsoft.cognitiveservices.speech\\1.13.0\\microsoft.cognitiveservices.speech.1.13.0.nupkg.sha512",
-    "C:\\Users\\diefe\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.16\\microsoft.netcore.app.runtime.win-x86.3.1.16.nupkg.sha512",
-    "C:\\Users\\diefe\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.16\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.16.nupkg.sha512",
-    "C:\\Users\\diefe\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.16\\microsoft.aspnetcore.app.runtime.win-x86.3.1.16.nupkg.sha512"
+    "C:\\Users\\developer\\.nuget\\packages\\microsoft.cognitiveservices.speech\\1.13.0\\microsoft.cognitiveservices.speech.1.13.0.nupkg.sha512",
+    "C:\\Users\\developer\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\3.1.19\\microsoft.netcore.app.runtime.win-x86.3.1.19.nupkg.sha512",
+    "C:\\Users\\developer\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\3.1.19\\microsoft.windowsdesktop.app.runtime.win-x86.3.1.19.nupkg.sha512",
+    "C:\\Users\\developer\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\3.1.19\\microsoft.aspnetcore.app.runtime.win-x86.3.1.19.nupkg.sha512"
   ],
   "logs": []
 }

@@ -324,19 +324,19 @@
     ]
   },
   "packageFolders": {
-    "C:\\Users\\diefe\\.nuget\\packages\\": {}
+    "C:\\Users\\developer\\.nuget\\packages\\": {}
   },
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\workspace\\c#\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
+      "projectUniqueName": "C:\\Workspace\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
       "projectName": "GameTabuada",
-      "projectPath": "C:\\workspace\\c#\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
-      "packagesPath": "C:\\Users\\diefe\\.nuget\\packages\\",
-      "outputPath": "C:\\workspace\\c#\\gameTabuada\\GameTabuada\\obj\\publish\\win-x86\\",
+      "projectPath": "C:\\Workspace\\gameTabuada\\GameTabuada\\GameTabuada.csproj",
+      "packagesPath": "C:\\Users\\developer\\.nuget\\packages\\",
+      "outputPath": "C:\\Workspace\\gameTabuada\\GameTabuada\\obj\\publish\\win-x86\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
-        "C:\\Users\\diefe\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Users\\developer\\AppData\\Roaming\\NuGet\\NuGet.Config",
         "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
       ],
       "originalTargetFrameworks": [
@@ -380,15 +380,15 @@
         "downloadDependencies": [
           {
             "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
-            "version": "[3.1.16, 3.1.16]"
+            "version": "[3.1.19, 3.1.19]"
           },
           {
             "name": "Microsoft.NETCore.App.Runtime.win-x86",
-            "version": "[3.1.16, 3.1.16]"
+            "version": "[3.1.19, 3.1.19]"
           },
           {
             "name": "Microsoft.WindowsDesktop.App.Runtime.win-x86",
-            "version": "[3.1.16, 3.1.16]"
+            "version": "[3.1.19, 3.1.19]"
           }
         ],
         "frameworkReferences": {
@@ -399,7 +399,7 @@
             "privateAssets": "none"
           }
         },
-        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.301\\RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.401\\RuntimeIdentifierGraph.json"
       }
     },
     "runtimes": {

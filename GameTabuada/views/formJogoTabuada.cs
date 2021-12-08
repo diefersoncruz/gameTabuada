@@ -1,12 +1,8 @@
 ﻿using GameTabuada.utils;
-using GameTabuada.views;
 using System;
 using System.Collections.Generic;
-using System.Media;
-using System.Security.Cryptography.X509Certificates;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using GameTabuada.views;
 
 namespace GameTabuada
 {
@@ -129,12 +125,7 @@ namespace GameTabuada
             }
         }
 
-        private void carregarConfiguracoesIniciais()
-        {
-            FormOpcoesJogo frmOpcoes = new FormOpcoesJogo(this);
-            frmOpcoes.ShowDialog();
-        }
-
+        
         public void carregarJogadoresSalaAtual()
         {
             // valida se foi informado sala de jogadores
@@ -190,7 +181,7 @@ namespace GameTabuada
                         }
                         else
                         {
-                            pararJogo();
+                            pararJogo(true);
                         }
                     }
                     else
@@ -210,12 +201,12 @@ namespace GameTabuada
                                 }
                                 else
                                 {
-                                    pararJogo();
+                                    pararJogo(true);
                                 }
                             }
                             else
                             {
-                                pararJogo();
+                                pararJogo(true);
                             }
                         }
                     }
@@ -256,8 +247,12 @@ namespace GameTabuada
         {   // valida se é será iniciado um novo jogo
             if (confirmarInicioNovoJogo())
             {
-                carregarConfiguracoesIniciais();
-                iniciarRodadas();
+                FormOpcoesJogo frmOpcoes = new FormOpcoesJogo(this);
+                DialogResult result = frmOpcoes.ShowDialog();
+                if (result == DialogResult.OK)
+                {
+                    iniciarRodadas();
+                }
             }
         }
 
@@ -349,7 +344,7 @@ namespace GameTabuada
                 // Divisão
                 if (operadorMatematico == 1 && dadosConfigurados.operacoesDeDivisao)
                 {
-                    lblOperacaoMatematica.Text = "/";
+                    lblOperacaoMatematica.Text = "÷";
                     // gera os fatores a partir do 1 para evitar erro por divisão por zero
                     gerarFatoresOperacaoMatematicaDivisao();
                     // calcula o resultado
@@ -406,8 +401,16 @@ namespace GameTabuada
                 ValidarRespostaUsuario();
             }
         }
+        public void abrirTelaResultados()
+        {
+            if (fUteis.ConfirmarAcaoUsuario("Deseja apresentar resultados ?"))
+            {
+                FormResultado frmResultado = new FormResultado(this, lblSala.Text);
+                frmResultado.Show();
+            }
+        }
 
-        public void pararJogo()
+        public void pararJogo(Boolean jogoAtivo=false)
         {
             ZerarVariaveis();
             txtResultado.ReadOnly = true;
@@ -421,10 +424,7 @@ namespace GameTabuada
             {
                 jogadores.salvarListaJogadores(listaJogadores);
             }
-            else
-            {
-                fUteis.ExibirMensagemUsuario("Total de acertos ["+listaJogadores[0].pontuacaoJogador+"]");
-            }
+            if (jogoAtivo) { abrirTelaResultados(); }
         }
 
         public bool RodadaFinal()
@@ -442,7 +442,7 @@ namespace GameTabuada
         {
             if (RodadaFinal())
             {
-                pararJogo();
+                pararJogo(true);
             }
             else
             {
@@ -465,7 +465,7 @@ namespace GameTabuada
         }
         private void btnParar_Click(object sender, EventArgs e)
         {
-            pararJogo();
+            pararJogo(false);
         }
 
 
@@ -523,6 +523,11 @@ namespace GameTabuada
         private void btnUsuarios_Click(object sender, EventArgs e)
         {
             AbrirTelaConfiguracoesJogadores();
+        }
+
+        private void label1_Click(object sender, EventArgs e)
+        {
+            abrirTelaResultados();
         }
 
         private void salvarPontuacaoJogadorAtual()
